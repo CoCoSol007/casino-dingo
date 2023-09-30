@@ -1,0 +1,267 @@
+[gd_scene load_steps=23 format=3 uid="uid://doypbab0gqq6m"]
+
+[ext_resource type="Script" path="res://Scenes/ScripteGame/MainMenu.gd" id="1_6v4tf"]
+[ext_resource type="Script" path="res://HUD/HUD.gd" id="1_jondv"]
+[ext_resource type="Texture2D" uid="uid://7b41bmcejr42" path="res://assets/font_shop.png" id="2_fh643"]
+[ext_resource type="PackedScene" uid="uid://bsq8yfy0vtath" path="res://Scenes/SwitchSceneButton/button.tscn" id="2_gvo85"]
+[ext_resource type="FontFile" uid="uid://bkon3tj4yjn5a" path="res://assets/font.otf" id="3_82bgv"]
+[ext_resource type="Texture2D" uid="uid://dw30ergdo7mbx" path="res://assets/Money.png" id="5_2ccat"]
+[ext_resource type="Texture2D" uid="uid://cqphm6fyypimc" path="res://assets/logo.png" id="6_i6tu0"]
+[ext_resource type="Texture2D" uid="uid://dwemj8g4bftph" path="res://assets/coin.png" id="6_jtlyw"]
+[ext_resource type="Texture2D" uid="uid://deg84jy8na1f6" path="res://assets/button/home_buton.png" id="7_17j87"]
+[ext_resource type="Texture2D" uid="uid://cp5jm34hn3m1n" path="res://assets/button/home_buton_pressed.png" id="8_v4jhv"]
+[ext_resource type="Texture2D" uid="uid://c30l0yhru0ciu" path="res://assets/button/home_buton_hover.png" id="9_t77ch"]
+[ext_resource type="Texture2D" uid="uid://bco2veuad730j" path="res://assets/quete/quete_button.png" id="10_gbdjt"]
+[ext_resource type="PackedScene" uid="uid://xptrppk6f4pw" path="res://assets/quete/quete.tscn" id="10_ysr28"]
+[ext_resource type="Texture2D" uid="uid://bblopq67xwam8" path="res://assets/quete/quete_button_pressed.png" id="11_up3b3"]
+[ext_resource type="Texture2D" uid="uid://k1728wunls0q" path="res://assets/quete/quete_button_hover.png" id="12_e2xjm"]
+[ext_resource type="AudioStream" uid="uid://cl7tk7se72agb" path="res://sound/playCart.wav" id="16_i1dar"]
+
+[sub_resource type="Gradient" id="Gradient_62our"]
+offsets = PackedFloat32Array(0.568627, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vwklg"]
+gradient = SubResource("Gradient_62our")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6udhg"]
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_box_extents = Vector3(576, 1, 1)
+particle_flag_disable_z = true
+gravity = Vector3(0, 200, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.0
+scale_max = 0.01
+color_ramp = SubResource("GradientTexture1D_vwklg")
+
+[sub_resource type="Animation" id="Animation_wyuby"]
+resource_name = "quete_close"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HUD/HUD/quete:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(48, 104), Vector2(-266, 104)]
+}
+
+[sub_resource type="Animation" id="Animation_lc7op"]
+resource_name = "quete_open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HUD/HUD/quete:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-266, 104), Vector2(47.9999, 104)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1yk74"]
+_data = {
+"quete_close": SubResource("Animation_wyuby"),
+"quete_open": SubResource("Animation_lc7op")
+}
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_6v4tf")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(576, 323.5)
+scale = Vector2(0.218928, 0.368871)
+texture = ExtResource("2_fh643")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+metadata/_edit_use_anchors_ = true
+
+[node name="HUD" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jondv")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="HUD/HUD"]
+layout_mode = 0
+offset_left = 193.0
+offset_top = 42.0
+offset_right = 693.0
+offset_bottom = 133.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_fonts/font = ExtResource("3_82bgv")
+theme_override_font_sizes/font_size = 78
+text = "0"
+
+[node name="Label2" type="Label" parent="HUD/HUD"]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 159.0
+offset_right = 698.0
+offset_bottom = 250.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_fonts/font = ExtResource("3_82bgv")
+theme_override_font_sizes/font_size = 78
+text = "0"
+
+[node name="marc" parent="HUD/HUD" instance=ExtResource("2_gvo85")]
+layout_mode = 0
+offset_left = 930.0
+offset_top = 50.0
+offset_right = 1764.0
+offset_bottom = 908.0
+targetScene = "res://Scenes/Game1.tscn"
+
+[node name="SlotMachineLabel" type="Label" parent="HUD/HUD/marc"]
+layout_mode = 0
+offset_left = -1833.33
+offset_top = 273.333
+offset_right = -1418.33
+offset_bottom = 364.333
+scale = Vector2(6.52165, 6.52165)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_fonts/font = ExtResource("3_82bgv")
+theme_override_font_sizes/font_size = 44
+text = "Machine a sous"
+
+[node name="marc2" parent="HUD/HUD" instance=ExtResource("2_gvo85")]
+layout_mode = 0
+offset_left = 930.0
+offset_top = 193.0
+offset_right = 1764.0
+offset_bottom = 1051.0
+targetScene = "res://Scenes/Game3.tscn"
+
+[node name="BlackJackLabel" type="Label" parent="HUD/HUD/marc2"]
+layout_mode = 0
+offset_left = -1426.67
+offset_top = 260.0
+offset_right = -1011.67
+offset_bottom = 351.0
+scale = Vector2(6.96094, 6.96094)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_fonts/font = ExtResource("3_82bgv")
+theme_override_font_sizes/font_size = 44
+text = "Black Jack"
+
+[node name="marc3" parent="HUD/HUD" instance=ExtResource("2_gvo85")]
+layout_mode = 0
+offset_left = 930.0
+offset_top = 338.0
+offset_right = 1764.0
+offset_bottom = 1196.0
+targetScene = "res://Scenes/shop.tscn"
+
+[node name="shopLabel" type="Label" parent="HUD/HUD/marc3"]
+layout_mode = 0
+offset_left = -1293.33
+offset_top = 240.0
+offset_right = -878.333
+offset_bottom = 331.0
+scale = Vector2(7.10263, 7.10263)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_fonts/font = ExtResource("3_82bgv")
+theme_override_font_sizes/font_size = 44
+text = "Comptoir"
+
+[node name="TextureRect2" type="TextureRect" parent="HUD/HUD"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 303.0
+offset_right = 1745.0
+offset_bottom = 1311.0
+scale = Vector2(0.240108, 0.240108)
+texture = ExtResource("6_i6tu0")
+
+[node name="marc4" type="TextureButton" parent="HUD/HUD"]
+modulate = Color(1, 0.435294, 0.364706, 1)
+layout_mode = 0
+offset_left = 948.0
+offset_top = 530.0
+offset_right = 1782.0
+offset_bottom = 1388.0
+scale = Vector2(0.108107, 0.108107)
+texture_normal = ExtResource("7_17j87")
+texture_pressed = ExtResource("8_v4jhv")
+texture_hover = ExtResource("9_t77ch")
+flip_h = true
+flip_v = true
+
+[node name="Label3" type="Label" parent="HUD/HUD/marc4"]
+layout_mode = 0
+offset_left = -3006.28
+offset_top = 314.503
+offset_right = -2387.28
+offset_bottom = 405.503
+scale = Vector2(4.67404, 4.67404)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_fonts/font = ExtResource("3_82bgv")
+theme_override_font_sizes/font_size = 78
+text = "reinitialiser le jeu"
+
+[node name="Button" type="TextureButton" parent="HUD/HUD"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 568.0
+offset_right = 5020.0
+offset_bottom = 1706.0
+scale = Vector2(0.0501526, 0.0501526)
+texture_normal = ExtResource("10_gbdjt")
+texture_pressed = ExtResource("11_up3b3")
+texture_hover = ExtResource("12_e2xjm")
+
+[node name="quete" parent="HUD/HUD" instance=ExtResource("10_ysr28")]
+layout_mode = 1
+offset_left = -266.0
+offset_top = 104.0
+offset_right = -266.432
+offset_bottom = 103.72
+scale = Vector2(0.549449, 0.549449)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(593, 7)
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_6udhg")
+texture = ExtResource("5_2ccat")
+lifetime = 5.0
+
+[node name="Money" type="Sprite2D" parent="."]
+position = Vector2(142, 204)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("5_2ccat")
+
+[node name="Coin" type="Sprite2D" parent="."]
+position = Vector2(137, 85)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_jtlyw")
+
+[node name="queteAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1yk74")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_i1dar")
+volume_db = -10.0
+
+[connection signal="button_down" from="HUD/HUD/marc4" to="." method="_on_texture_button_button_down"]
+[connection signal="button_down" from="HUD/HUD/Button" to="." method="_on_button_button_down"]

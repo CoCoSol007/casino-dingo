@@ -1,0 +1,134 @@
+~ start
+
+if not GAME.has_talk_to_richard:
+	Richard: Enfin, tu arrives ! J'espère que tu as mon fric ! Mes pauvres petits 10 000 $ !!!
+	You: Heureux de te revoir aussi, Richard ! Je suis venu ici avec 100 $ ! Je voudrais jouer dans ton casino pour rembourser ma dette.
+	set PERSONNAGE.emit_signal("change_state","Richard", "ANGRY")
+	Richard: Cette histoire commence sérieusement à me casser les pieds ! Je te laisse 1 heure pour rembourser cette dette à tes risques et périls !!! 
+	You: Je préfère ne rien savoir, jouer et te rembourser dans le plus grand calme. Ni problème ni querelle !
+	set PERSONNAGE.emit_signal("change_state","Richard", "HAPPY")
+	Richard: Mouais... bon, que veux-tu ?
+	set GAME.change_talk_to_richard(true)
+else:
+	set PERSONNAGE.emit_signal("change_state","Richard", "HAPPY")
+	Richard: [[C'est bon, tu as la moula ??|Tu viens me rendre mon blé ?|AAAAAhhhhhhh, tu as enfin le pognon..]] Je savais que je pouvais compter sur toi ! 
+	You: Alors heuuuuu, je n'ai pas ton argent, mais...
+	 
+You: heuu...
+- Je pourrais avoir des jetons ?
+	Richard: Aller, tu en veux combien ?
+	- 500 jetons pour 50 $
+		if GAME.get_money() - 50 >= 0: 
+			set GAME.emit_signal("add_FCC", 500)
+			set GAME.emit_signal("substract_money", 50)
+			Richard: Seulement 500 ? Mais t'as pas un rond !!
+		else:
+			set PERSONNAGE.emit_signal("change_state","Richard", "ANGRY")
+			Richard: Tu veux m'arnaquer, sale idiot.
+	- 1000 jetons pour 100 $
+		if GAME.get_money() - 100 >= 0: 
+			set GAME.emit_signal("add_FCC", 1000)
+			set GAME.emit_signal("substract_money", 100)
+			Richard: Vas pour 1000, à très vite avec mon argent.
+		else:
+			set PERSONNAGE.emit_signal("change_state","Richard", "ANGRY")
+			Richard: Tu veux m'arnaquer, sale idiot.
+	- 5000 jetons pour 500 $
+		if GAME.get_money() - 500 >= 0: 
+			set GAME.emit_signal("add_FCC", 5000)
+			set GAME.emit_signal("substract_money", 500)
+			Richard: Vas pour 5000, à très vite avec mon argent.
+		else:
+			set PERSONNAGE.emit_signal("change_state","Richard", "ANGRY")
+			Richard: Tu veux m'arnaquer, sale idiot.
+	- 10000 jetons pour 1000 $
+		if GAME.get_money() - 1000 >= 0: 
+			set GAME.emit_signal("add_FCC", 10000)
+			set GAME.emit_signal("substract_money", 1000)
+			Richard: Vas pour 10000, à très vite avec mon argent.
+		else:
+			set PERSONNAGE.emit_signal("change_state","Richard", "ANGRY")
+			Richard: Tu veux m'arnaquer, sale idiot.
+	- Pour tout mon argent !
+		if GAME.get_money() > 0:
+			set GAME.emit_signal("add_FCC", GAME.get_money() * 10)
+			set GAME.emit_signal("substract_money", GAME.get_money())
+			Richard: Ok, let's gooo. Tu intérêt à gagner.
+		else:
+			set PERSONNAGE.emit_signal("change_state","Richard", "ANGRY")
+			Richard: Tu n'as plus un sou, sale fou !
+- Je pourrais échanger mes jetons ? 
+	Richard: Tu veux te refaire de la thune !! C'est pour me rembourser, j'espère... Tu veux échanger combien de jetons ??
+	- 50 $ pour 500 jetons
+		if GAME.get_FCC() - 500 >= 0:
+			set GAME.emit_signal("add_money", 50)
+			set GAME.emit_signal("substract_FCC", 500)
+			Richard: Vas pour 50 $, à très vite avec mon argent.
+		else:
+			set PERSONNAGE.emit_signal("change_state","Richard", "ANGRY")
+			Richard: Tu veux m'arnaquer, sale idiot.
+	- 100 $ pour 1000 jetons
+		if GAME.get_FCC() - 1000 >= 0:
+			set GAME.emit_signal("add_money", 100)
+			set GAME.emit_signal("substract_FCC", 1000)
+			Richard: Vas pour 100 $, à très vite avec mon argent.
+		else:
+			set PERSONNAGE.emit_signal("change_state","Richard", "ANGRY")
+			Richard: Tu veux m'arnaquer, sale idiot.
+	- 500 $ pour 5000 jetons
+		if GAME.get_FCC() - 5000 >= 0:
+			set GAME.emit_signal("add_money", 500)
+			set GAME.emit_signal("substract_FCC", 5000)
+			Richard: Vas pour 500 $, à très vite avec mon argent.
+		else:
+			set PERSONNAGE.emit_signal("change_state","Richard", "ANGRY")
+			Richard: Tu veux m'arnaquer, sale idiot.
+	- 1000 $ pour 10000 jetons
+		if GAME.get_FCC() - 1000 >= 0:
+			set GAME.emit_signal("add_money", 1000)
+			set GAME.emit_signal("substract_FCC", 10000)
+			Richard: Vas pour 1000 $, à très vite avec mon argent.
+		else:
+			set PERSONNAGE.emit_signal("change_state","Richard", "ANGRY")
+			Richard: Tu veux m'arnaquer, sale idiot.
+	- Pour tous mes jetons !
+		if GAME.get_FCC() > 0:
+			set GAME.emit_signal("add_money", GAME.get_FCC() / 10)
+			set GAME.emit_signal("substract_FCC", GAME.get_FCC())
+			Richard: TOUT heuuu ok...
+		else:
+			set PERSONNAGE.emit_signal("change_state","Richard", "ANGRY")
+			Richard: Tu n'as plus de jetons, sale fou !
+- J'en ai plus rien à BRANLER !! Je m'en fous de ma dette.
+	set PERSONNAGE.emit_signal("change_state","Richard", "ANGRY")
+	Richard: ALOOOORS, JAMAIS ON NE M'AVAIT PARLÉ COMME ÇA. TU VAS PASSER UN SALE QUART D'HEURE !!!!!
+	set GAME.emit_signal("kill")
+- Je voudrais rembourser ma dette !
+	if GAME.get_money() >= 10000: 
+		Richard: ENFIN !!! Pas trop tôt !!! Je commençais à m'impatienter, moi ! Mais bon, tu me les as remboursés !
+		You: C'est avec plaisir !!! Maintenant je peux rentrer et jouer à Valo et rank-up Iron II.
+		Richard: Sale noob !
+		set GAME.emit_signal("win")
+	else:
+		set PERSONNAGE.emit_signal("change_state","Richard", "ANGRY")
+		Richard: Espece de con tu n'as pas la thune vas travailler sale chomeur !!!
+=> END
+
+~ phone
+
+Richard: Salut. Comment ça va ??
+You: Salut mon vieux ami. J'ai une urgence !!! Question de vie ou de mort !!! Il faut que tu me prêtes une petite somme d'argent.
+Richard: Encore !!! Tu veux combien ??? Et j'espère que tu me les rembourseras, pas comme la dernière fois.
+You: Tu peux me faire confiance. Pour le montant, je te laisse t'en charger...
+Richard: OK, pas de soucis.
+Notification: Vous venez de recevoir un virement de la part de Richard 
+
+=> END
+
+~ PlusDeTemps
+
+Richard: JE T'AVAIS LAISSER 1H !!! Maintenent, c'est trop tard !!!
+set PERSONNAGE.emit_signal("change_state","Richard", "ANGRY")
+set GAME.emit_signal("kill")
+
+=> END

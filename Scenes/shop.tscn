@@ -1,0 +1,443 @@
+[gd_scene load_steps=49 format=3 uid="uid://dksfny67smttp"]
+
+[ext_resource type="Script" path="res://Scenes/ScripteGame/shop.gd" id="1_12bxb"]
+[ext_resource type="Texture2D" uid="uid://bp6ld5mj76d2c" path="res://assets/comptoir.png" id="2_p0cni"]
+[ext_resource type="Texture2D" uid="uid://7b41bmcejr42" path="res://assets/font_shop.png" id="2_w6fjp"]
+[ext_resource type="Texture2D" uid="uid://c0gwsaenu7m3b" path="res://assets/Personnages/Richard_angry1.png" id="3_ff136"]
+[ext_resource type="Texture2D" uid="uid://c3pa6e1sgcaoa" path="res://assets/Personnages/Richard_happy1.png" id="3_outi5"]
+[ext_resource type="Texture2D" uid="uid://cw0fr2rxtk82o" path="res://assets/Personnages/blilyBoy_angry1.png" id="4_0gxvo"]
+[ext_resource type="Script" path="res://Scenes/ScripteGame/AnimatedSprite2D.gd" id="4_ehb0w"]
+[ext_resource type="Texture2D" uid="uid://bc0ejlxjtl1pn" path="res://assets/bordure.png" id="4_llcv8"]
+[ext_resource type="Texture2D" uid="uid://bqnrohorhbca3" path="res://assets/Personnages/Richard_angry2.png" id="4_w14me"]
+[ext_resource type="FontFile" uid="uid://bkon3tj4yjn5a" path="res://assets/font.otf" id="5_jgfh2"]
+[ext_resource type="Texture2D" uid="uid://c0s2tseov6qa6" path="res://assets/Personnages/blilyBoy_angry2.png" id="5_pu1v5"]
+[ext_resource type="Texture2D" uid="uid://dxi5pcw507qwy" path="res://assets/button/Arow_button.png" id="6_710c1"]
+[ext_resource type="PackedScene" uid="uid://bsq8yfy0vtath" path="res://Scenes/SwitchSceneButton/button.tscn" id="6_ch623"]
+[ext_resource type="Texture2D" uid="uid://d0xtswjdvl87e" path="res://assets/Personnages/Richard_happy2.png" id="6_m420w"]
+[ext_resource type="Texture2D" uid="uid://t5kc1mpr5kpi" path="res://assets/Personnages/blilyBoy_happy1.png" id="6_s3fi4"]
+[ext_resource type="Texture2D" uid="uid://dned2ilggnjr5" path="res://assets/Personnages/blilyBoy_happy2.png" id="7_b3wjh"]
+[ext_resource type="Texture2D" uid="uid://dw30ergdo7mbx" path="res://assets/Money.png" id="7_c3u1u"]
+[ext_resource type="Texture2D" uid="uid://cpksdl5aqcvut" path="res://assets/bookshelf_hover.png" id="8_27lqy"]
+[ext_resource type="Texture2D" uid="uid://dwemj8g4bftph" path="res://assets/coin.png" id="8_nntts"]
+[ext_resource type="Texture2D" uid="uid://b8lv0bnsudoi3" path="res://assets/bookshelf.png" id="9_mxwqp"]
+[ext_resource type="Texture2D" uid="uid://cxvtatet4qvor" path="res://assets/button/Arow_button_pressed.png" id="11_vwfwn"]
+[ext_resource type="Texture2D" uid="uid://cd2xi5og2nnu5" path="res://assets/button/Arow_button_hover.png" id="12_chqju"]
+[ext_resource type="Texture2D" uid="uid://bc85o04cxxxm4" path="res://assets/button/talk_button.png" id="13_3rk65"]
+[ext_resource type="AudioStream" uid="uid://dlfxbmeaobnj3" path="res://sound/Clic.wav" id="13_vnel6"]
+[ext_resource type="Texture2D" uid="uid://bxeaqwt2tlluf" path="res://assets/button/talk_button_pressed.png" id="14_q5im5"]
+[ext_resource type="Texture2D" uid="uid://6rqe1nf7y1yn" path="res://assets/button/talk_button_hover.png" id="15_3qelm"]
+[ext_resource type="Texture2D" uid="uid://bco2veuad730j" path="res://assets/quete/quete_button.png" id="24_irohy"]
+[ext_resource type="PackedScene" uid="uid://xptrppk6f4pw" path="res://assets/quete/quete.tscn" id="25_8ug6c"]
+[ext_resource type="Texture2D" uid="uid://bblopq67xwam8" path="res://assets/quete/quete_button_pressed.png" id="25_pohh5"]
+[ext_resource type="Texture2D" uid="uid://k1728wunls0q" path="res://assets/quete/quete_button_hover.png" id="26_wm6ob"]
+[ext_resource type="VideoStream" path="res://assets/cinematique/richard.ogv" id="28_cwprv"]
+[ext_resource type="Texture2D" uid="uid://bhiw3ut2obqo4" path="res://assets/book_open.png" id="31_jj0ob"]
+[ext_resource type="AudioStream" uid="uid://cl7tk7se72agb" path="res://sound/playCart.wav" id="33_qq8ye"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0650p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ff136")
+}],
+"loop": true,
+"name": &"ANGRY1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_w14me")
+}],
+"loop": true,
+"name": &"ANGRY2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_outi5")
+}],
+"loop": true,
+"name": &"HAPPY1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_m420w")
+}],
+"loop": true,
+"name": &"HAPPY2",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0cb64"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_27lqy")
+}],
+"loop": true,
+"name": &"HOVER",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_mxwqp")
+}],
+"loop": true,
+"name": &"NORMAL",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ww0k1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_0gxvo")
+}],
+"loop": true,
+"name": &"ANGRY1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_pu1v5")
+}],
+"loop": true,
+"name": &"ANGRY2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_s3fi4")
+}],
+"loop": true,
+"name": &"HAPPY1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_b3wjh")
+}],
+"loop": true,
+"name": &"HAPPY2",
+"speed": 5.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_i4wh7"]
+script/source = "extends Control
+@onready var pre = $pre
+func _ready():
+	
+	GAME.connect(\"update_money\", _update_money) # Replace with function body.
+	$Label.set_text(str(GAME.get_money()))
+	GAME.connect(\"update_FCC\", _update_FCC) # Replace with function body.
+	$Label2.set_text(str(GAME.get_FCC()))
+
+func _update_money(new_value):
+	$Label.set_text(str(new_value))
+
+func _update_FCC(new_value):
+	$Label2.set_text(str(new_value))
+
+func _process(_delta):
+	if owner.target == \"shop\":
+		var time = str(round(GAME.get_time_left()))
+		pre.set_text(\"temps restant : \" + time)
+	else:
+		pre.set_visible(false)
+"
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b2qgw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gc550"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ymdk8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_207cf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tnxo3"]
+
+[sub_resource type="Theme" id="Theme_jgy5p"]
+Button/styles/disabled = SubResource("StyleBoxEmpty_b2qgw")
+Button/styles/focus = SubResource("StyleBoxEmpty_gc550")
+Button/styles/hover = SubResource("StyleBoxEmpty_ymdk8")
+Button/styles/normal = SubResource("StyleBoxEmpty_207cf")
+Button/styles/pressed = SubResource("StyleBoxEmpty_tnxo3")
+
+[sub_resource type="Gradient" id="Gradient_7mvmy"]
+offsets = PackedFloat32Array(0.0924855, 1)
+colors = PackedColorArray(0.874345, 0.870458, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_e3y8k"]
+gradient = SubResource("Gradient_7mvmy")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.987179, 0.153846)
+
+[sub_resource type="Animation" id="Animation_wyuby"]
+resource_name = "quete_close"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/quete:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(57.9999, 103.86), Vector2(-302, 103.86)]
+}
+
+[sub_resource type="Animation" id="Animation_lc7op"]
+resource_name = "quete_open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/quete:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-302, 103.86), Vector2(58, 103.86)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1yk74"]
+_data = {
+"quete_close": SubResource("Animation_wyuby"),
+"quete_open": SubResource("Animation_lc7op")
+}
+
+[node name="Shop" type="Node2D"]
+script = ExtResource("1_12bxb")
+
+[node name="FontShop" type="Sprite2D" parent="."]
+position = Vector2(-409, 324.141)
+scale = Vector2(0.466, 0.369601)
+texture = ExtResource("2_w6fjp")
+
+[node name="Richard" type="AnimatedSprite2D" parent="."]
+position = Vector2(409, 359)
+scale = Vector2(0.466, 0.466)
+sprite_frames = SubResource("SpriteFrames_0650p")
+animation = &"HAPPY2"
+script = ExtResource("4_ehb0w")
+
+[node name="Timer" type="Timer" parent="Richard"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-823, 208)
+scale = Vector2(0.116155, 0.116155)
+sprite_frames = SubResource("SpriteFrames_0cb64")
+animation = &"NORMAL"
+
+[node name="BlilyBoy" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1180, 280)
+scale = Vector2(0.40204, 0.40204)
+sprite_frames = SubResource("SpriteFrames_ww0k1")
+animation = &"ANGRY1"
+flip_h = true
+script = ExtResource("4_ehb0w")
+
+[node name="Timer" type="Timer" parent="BlilyBoy"]
+
+[node name="Comptoir" type="Sprite2D" parent="."]
+position = Vector2(-1224.32, 358.92)
+scale = Vector2(0.466, 0.466)
+texture = ExtResource("2_p0cni")
+flip_h = true
+
+[node name="Bordure" type="Sprite2D" parent="."]
+position = Vector2(-407.318, 358.92)
+scale = Vector2(0.466, 0.466)
+texture = ExtResource("4_llcv8")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(242, 324)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_i4wh7")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 29.0
+offset_right = 252.0
+offset_bottom = 111.0
+theme_override_fonts/font = ExtResource("5_jgfh2")
+theme_override_font_sizes/font_size = 70
+text = "aaa"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 139.0
+offset_top = 146.0
+offset_right = 248.0
+offset_bottom = 228.0
+theme_override_fonts/font = ExtResource("5_jgfh2")
+theme_override_font_sizes/font_size = 70
+text = "aaa"
+
+[node name="pre" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 471.0
+offset_top = 38.0
+offset_right = 580.0
+offset_bottom = 120.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_fonts/font = ExtResource("5_jgfh2")
+theme_override_font_sizes/font_size = 40
+text = "aaa"
+
+[node name="Button" parent="CanvasLayer/Control" instance=ExtResource("6_ch623")]
+layout_mode = 0
+offset_left = 1024.0
+offset_top = 1.0
+offset_right = 1858.0
+offset_bottom = 859.0
+flip_h = false
+flip_v = false
+targetScene = "res://Scenes/MainMenu.tscn"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 132.0
+offset_right = 2322.0
+offset_bottom = 2436.0
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("7_c3u1u")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 21.0
+offset_right = 1048.0
+offset_bottom = 1045.0
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("8_nntts")
+
+[node name="SwitchButton" type="TextureButton" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 275.0
+offset_top = 445.0
+offset_right = 1299.0
+offset_bottom = 1469.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("6_710c1")
+texture_pressed = ExtResource("11_vwfwn")
+texture_hover = ExtResource("12_chqju")
+
+[node name="SwitchButton2" type="TextureButton" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 737.0
+offset_top = 439.0
+offset_right = 1761.0
+offset_bottom = 1463.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("6_710c1")
+texture_pressed = ExtResource("11_vwfwn")
+texture_hover = ExtResource("12_chqju")
+flip_h = true
+
+[node name="Richard" type="TextureButton" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 890.0
+offset_top = 189.0
+offset_right = 3370.0
+offset_bottom = 1943.0
+scale = Vector2(0.100233, 0.100233)
+texture_normal = ExtResource("13_3rk65")
+texture_pressed = ExtResource("14_q5im5")
+texture_hover = ExtResource("15_3qelm")
+
+[node name="Button2" type="TextureButton" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 582.0
+offset_right = 5020.0
+offset_bottom = 1720.0
+scale = Vector2(0.047765, 0.047765)
+texture_normal = ExtResource("24_irohy")
+texture_pressed = ExtResource("25_pohh5")
+texture_hover = ExtResource("26_wm6ob")
+
+[node name="quete" parent="CanvasLayer/Control" instance=ExtResource("25_8ug6c")]
+layout_mode = 1
+offset_left = -302.0
+offset_top = 103.86
+offset_right = -302.432
+offset_bottom = 103.58
+scale = Vector2(0.549449, 0.549449)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 128.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.899237, 0.899237)
+stream = ExtResource("28_cwprv")
+
+[node name="Button3" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 756.0
+offset_top = 152.0
+offset_right = 856.0
+offset_bottom = 281.0
+theme = SubResource("Theme_jgy5p")
+
+[node name="TextureRect3" type="TextureButton" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 0
+offset_left = 178.0
+offset_right = 1932.0
+offset_bottom = 1754.0
+scale = Vector2(0.470579, 0.470579)
+texture_normal = ExtResource("31_jj0ob")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_vnel6")
+volume_db = 24.0
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-330, -130)
+energy = 0.25
+texture = SubResource("GradientTexture2D_e3y8k")
+texture_scale = 30.0
+
+[node name="queteAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1yk74")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("33_qq8ye")
+volume_db = -10.0
+
+[connection signal="button_down" from="CanvasLayer/Control/SwitchButton" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/SwitchButton2" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/Richard" to="." method="_on_richard_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/Button2" to="." method="_on_button_2_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/Button3" to="." method="_on_button_3_button_down"]
+[connection signal="mouse_entered" from="CanvasLayer/Control/Button3" to="." method="_on_button_3_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Control/Button3" to="." method="_on_button_3_mouse_exited"]
+[connection signal="button_down" from="CanvasLayer/Control/TextureRect3" to="." method="_on_texture_rect_3_button_down"]

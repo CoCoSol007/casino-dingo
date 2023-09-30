@@ -1,0 +1,167 @@
+[gd_scene load_steps=14 format=3 uid="uid://bjak8474fpo7w"]
+
+[ext_resource type="Texture2D" uid="uid://deg84jy8na1f6" path="res://assets/button/home_buton.png" id="1_6of7q"]
+[ext_resource type="FontFile" uid="uid://bkon3tj4yjn5a" path="res://assets/font.otf" id="1_klwqy"]
+[ext_resource type="Script" path="res://Scenes/ScripteGame/win.gd" id="1_xrpvd"]
+[ext_resource type="Texture2D" uid="uid://cp5jm34hn3m1n" path="res://assets/button/home_buton_pressed.png" id="2_4rh0o"]
+[ext_resource type="Texture2D" uid="uid://7b41bmcejr42" path="res://assets/font_shop.png" id="2_pgac2"]
+[ext_resource type="Texture2D" uid="uid://c30l0yhru0ciu" path="res://assets/button/home_buton_hover.png" id="3_ujnlg"]
+[ext_resource type="Texture2D" uid="uid://dw30ergdo7mbx" path="res://assets/Money.png" id="7_apoa8"]
+
+[sub_resource type="Gradient" id="Gradient_kt5ry"]
+offsets = PackedFloat32Array(0.568627, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_c8w38"]
+gradient = SubResource("Gradient_kt5ry")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fpb8t"]
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_box_extents = Vector3(576, 1, 1)
+particle_flag_disable_z = true
+gravity = Vector3(0, 200, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.0
+scale_max = 0.01
+color_ramp = SubResource("GradientTexture1D_c8w38")
+
+[sub_resource type="Animation" id="Animation_uuhuk"]
+resource_name = "lose"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0.47451, 0.00392157, 0.172549, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_j4j33"]
+resource_name = "win"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 1, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rjy8l"]
+_data = {
+"lose": SubResource("Animation_uuhuk"),
+"win": SubResource("Animation_j4j33")
+}
+
+[node name="win" type="Node2D"]
+script = ExtResource("1_xrpvd")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="marc" type="TextureButton" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.17284
+anchor_bottom = -0.17284
+offset_left = 544.0
+offset_top = 282.0
+offset_right = 1378.0
+offset_bottom = 1140.0
+scale = Vector2(0.108107, 0.108107)
+texture_normal = ExtResource("1_6of7q")
+texture_pressed = ExtResource("2_4rh0o")
+texture_hover = ExtResource("3_ujnlg")
+flip_h = true
+flip_v = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0130208
+anchor_right = 0.0130208
+offset_left = 488.0
+offset_top = 26.0
+offset_right = 718.0
+offset_bottom = 94.0
+theme_override_colors/font_color = Color(0.294118, 0.505882, 1, 1)
+theme_override_fonts/font = ExtResource("1_klwqy")
+theme_override_font_sizes/font_size = 50
+text = "Victoire"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.17284
+anchor_bottom = -0.17284
+offset_left = 504.0
+offset_top = 209.0
+offset_right = 734.0
+offset_bottom = 277.0
+theme_override_fonts/font = ExtResource("1_klwqy")
+theme_override_font_sizes/font_size = 50
+text = "Restart"
+metadata/_edit_use_anchors_ = true
+
+[node name="TextEdit" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 593.0
+offset_right = 679.0
+offset_bottom = 675.0
+scale = Vector2(0.478289, 0.478289)
+theme_override_fonts/font = ExtResource("1_klwqy")
+theme_override_font_sizes/font_size = 70
+text = "Jeu fait par Fish Canard"
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 649.0
+color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.218928, 0.369441)
+texture = ExtResource("2_pgac2")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(593, 7)
+amount = 500
+process_material = SubResource("ParticleProcessMaterial_fpb8t")
+texture = ExtResource("7_apoa8")
+lifetime = 5.0
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(582, 437)
+scale = Vector2(0.141327, 0.141327)
+texture = ExtResource("7_apoa8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rjy8l")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

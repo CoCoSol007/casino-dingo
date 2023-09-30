@@ -1,0 +1,355 @@
+[gd_scene load_steps=38 format=3 uid="uid://c4axo3qsl7dbk"]
+
+[ext_resource type="Texture2D" uid="uid://dbl45jxsu5es2" path="res://assets/background.png" id="1_5ulmi"]
+[ext_resource type="Script" path="res://Scenes/ScripteGame/Game1.gd" id="1_33qnf"]
+[ext_resource type="Texture2D" uid="uid://bq2u5xcwkk8o4" path="res://assets/casino.png" id="2_tpdx1"]
+[ext_resource type="PackedScene" uid="uid://bvfeapmaqbrw3" path="res://Scenes/ScripteGame/colun.tscn" id="3_4w6go"]
+[ext_resource type="FontFile" uid="uid://bkon3tj4yjn5a" path="res://assets/font.otf" id="4_iruf3"]
+[ext_resource type="Texture2D" uid="uid://c1qlxkdnkx0wn" path="res://assets/Money_shadow.png" id="4_xrlq2"]
+[ext_resource type="Texture2D" uid="uid://bqv0ky7ym4o1i" path="res://assets/separator.png" id="5_33ep3"]
+[ext_resource type="Script" path="res://Scenes/ScripteGame/HUD.gd" id="8_vndb3"]
+[ext_resource type="Texture2D" uid="uid://dw30ergdo7mbx" path="res://assets/Money.png" id="9_tgqhj"]
+[ext_resource type="PackedScene" uid="uid://bsq8yfy0vtath" path="res://Scenes/SwitchSceneButton/button.tscn" id="10_i5rig"]
+[ext_resource type="Texture2D" uid="uid://m12gj784jrk6" path="res://assets/button/b1up.png" id="11_bbuhh"]
+[ext_resource type="Texture2D" uid="uid://c4x8mydcp5vem" path="res://assets/button/b1down.png" id="12_ukvvs"]
+[ext_resource type="Texture2D" uid="uid://ss3iblygj1ct" path="res://assets/button/b1hover.png" id="13_dxocg"]
+[ext_resource type="Texture2D" uid="uid://bkbbkv4vrysit" path="res://assets/button/b2up.png" id="14_8e8jj"]
+[ext_resource type="Texture2D" uid="uid://bqeghugwm010a" path="res://assets/button/b2down.png" id="15_ph6we"]
+[ext_resource type="Texture2D" uid="uid://bnhalwud80d4" path="res://assets/button/b2hover.png" id="16_vo11d"]
+[ext_resource type="Texture2D" uid="uid://dw0lpjysebfjo" path="res://assets/button/b3up.png" id="17_0au2o"]
+[ext_resource type="Texture2D" uid="uid://hdvlx2tkbdck" path="res://assets/button/b3down.png" id="18_inc5j"]
+[ext_resource type="Texture2D" uid="uid://xvudigvabbfe" path="res://assets/button/b3hover.png" id="19_t0v3j"]
+[ext_resource type="Texture2D" uid="uid://cqphm6fyypimc" path="res://assets/logo.png" id="20_4hhua"]
+[ext_resource type="AudioStream" uid="uid://dlfxbmeaobnj3" path="res://sound/Clic.wav" id="20_86s7u"]
+[ext_resource type="PackedScene" uid="uid://xptrppk6f4pw" path="res://assets/quete/quete.tscn" id="21_g0vm1"]
+[ext_resource type="Texture2D" uid="uid://bco2veuad730j" path="res://assets/quete/quete_button.png" id="21_kvtif"]
+[ext_resource type="AudioStream" uid="uid://dmt7ivi00na3o" path="res://sound/tic.wav" id="21_vtfhi"]
+[ext_resource type="PackedScene" uid="uid://cae8iwfbgc6u6" path="res://assets/quete/popup.tscn" id="22_76wn5"]
+[ext_resource type="Texture2D" uid="uid://bblopq67xwam8" path="res://assets/quete/quete_button_pressed.png" id="22_go0vd"]
+[ext_resource type="Texture2D" uid="uid://k1728wunls0q" path="res://assets/quete/quete_button_hover.png" id="23_unoja"]
+[ext_resource type="VideoStream" path="res://assets/cinematique/SlotMachine.ogv" id="27_6wwuc"]
+[ext_resource type="PackedScene" uid="uid://bjawj6qp7x2p" path="res://Scenes/particule_casino.tscn" id="29_21tvv"]
+[ext_resource type="AudioStream" uid="uid://cl7tk7se72agb" path="res://sound/playCart.wav" id="30_ckvdj"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_yeqsy"]
+
+[sub_resource type="Theme" id="Theme_k3pq8"]
+Button/styles/normal = null
+
+[sub_resource type="Animation" id="Animation_7bnmk"]
+resource_name = "kill"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Colun:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.1, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(270, 100), Vector2(270, 400)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Colun2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(-0.1, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(545, 100), Vector2(545, 400)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Colun3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(-0.1, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(848, 100), Vector2(848, 400)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Casino/Separator:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(-0.1, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -2.222), Vector2(0, 306.667)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r18vr"]
+_data = {
+"kill": SubResource("Animation_7bnmk")
+}
+
+[sub_resource type="Animation" id="Animation_wyuby"]
+resource_name = "quete_close"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HUD/HUD/quete:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(48, 104), Vector2(-266, 104)]
+}
+
+[sub_resource type="Animation" id="Animation_lc7op"]
+resource_name = "quete_open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HUD/HUD/quete:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-266, 104), Vector2(47.9999, 104)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1yk74"]
+_data = {
+"quete_close": SubResource("Animation_wyuby"),
+"quete_open": SubResource("Animation_lc7op")
+}
+
+[node name="Game1" type="Node2D"]
+position = Vector2(1, 0)
+script = ExtResource("1_33qnf")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(575, 324)
+scale = Vector2(0.656784, 0.522581)
+texture = ExtResource("1_5ulmi")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0.823529, 0.823529, 0.823529, 1)
+position = Vector2(570.375, 364)
+scale = Vector2(829.25, 286.5)
+mesh = SubResource("QuadMesh_yeqsy")
+
+[node name="Colun" parent="." instance=ExtResource("3_4w6go")]
+position = Vector2(270, 100)
+
+[node name="Colun2" parent="." instance=ExtResource("3_4w6go")]
+position = Vector2(545, 100)
+end_index = 11
+
+[node name="Colun3" parent="." instance=ExtResource("3_4w6go")]
+position = Vector2(848, 100)
+end_index = 12
+
+[node name="Casino" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_tpdx1")
+
+[node name="Separator" type="Sprite2D" parent="Casino"]
+position = Vector2(0, -2.222)
+texture = ExtResource("5_33ep3")
+
+[node name="Money" type="Sprite2D" parent="Casino"]
+y_sort_enabled = true
+position = Vector2(-962.222, -593.333)
+scale = Vector2(0.0933933, 0.0933933)
+texture = ExtResource("9_tgqhj")
+
+[node name="MoneyShadow" type="Sprite2D" parent="Casino/Money"]
+modulate = Color(0, 0, 0, 0.254902)
+position = Vector2(-0.000488281, -95.1769)
+texture = ExtResource("4_xrlq2")
+offset = Vector2(-250, 0)
+
+[node name="particule_casino" parent="." instance=ExtResource("29_21tvv")]
+position = Vector2(368, 4)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+metadata/_edit_use_anchors_ = true
+
+[node name="HUD" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("8_vndb3")
+
+[node name="Label" type="Label" parent="HUD/HUD"]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 30.0
+offset_right = 464.0
+offset_bottom = 114.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 0
+theme_override_fonts/font = ExtResource("4_iruf3")
+theme_override_font_sizes/font_size = 50
+text = "1000"
+
+[node name="Label2" type="Label" parent="HUD/HUD"]
+layout_mode = 0
+offset_left = 435.0
+offset_top = 30.0
+offset_right = 695.0
+offset_bottom = 114.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 0
+theme_override_fonts/font = ExtResource("4_iruf3")
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="Label3" type="Label" parent="HUD/HUD"]
+layout_mode = 0
+offset_left = 969.0
+offset_top = 26.0
+offset_right = 1229.0
+offset_bottom = 110.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 0
+theme_override_fonts/font = ExtResource("4_iruf3")
+theme_override_font_sizes/font_size = 50
+text = "Home"
+
+[node name="Button" parent="HUD/HUD" instance=ExtResource("10_i5rig")]
+layout_mode = 0
+offset_left = 885.0
+offset_top = 12.0
+offset_right = 1719.0
+offset_bottom = 870.0
+scale = Vector2(0.1, 0.1)
+theme = SubResource("Theme_k3pq8")
+targetScene = "res://Scenes/MainMenu.tscn"
+
+[node name="StartButton" type="TextureButton" parent="HUD/HUD"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0234375
+anchor_top = 0.00617303
+anchor_right = 0.0234375
+anchor_bottom = 0.00617303
+offset_left = 774.0
+offset_top = 529.0
+offset_right = 1110.0
+offset_bottom = 750.0
+scale = Vector2(0.48, 0.520002)
+action_mode = 0
+texture_normal = ExtResource("11_bbuhh")
+texture_pressed = ExtResource("12_ukvvs")
+texture_hover = ExtResource("13_dxocg")
+metadata/_edit_use_anchors_ = true
+
+[node name="add_bet_button" type="TextureButton" parent="HUD/HUD"]
+layout_mode = 0
+offset_left = 395.0
+offset_top = 552.0
+offset_right = 663.0
+offset_bottom = 723.0
+scale = Vector2(0.45, 0.45)
+texture_normal = ExtResource("14_8e8jj")
+texture_pressed = ExtResource("15_ph6we")
+texture_hover = ExtResource("16_vo11d")
+
+[node name="substract_bet_button" type="TextureButton" parent="HUD/HUD"]
+layout_mode = 0
+offset_left = 244.0
+offset_top = 552.0
+offset_right = 513.0
+offset_bottom = 725.0
+scale = Vector2(0.45, 0.45)
+texture_normal = ExtResource("17_0au2o")
+texture_pressed = ExtResource("18_inc5j")
+texture_hover = ExtResource("19_t0v3j")
+
+[node name="TextureRect2" type="TextureRect" parent="HUD/HUD"]
+layout_mode = 0
+offset_left = 712.0
+offset_top = 9.0
+offset_right = 2414.0
+offset_bottom = 1017.0
+scale = Vector2(0.0958819, 0.0958819)
+texture = ExtResource("20_4hhua")
+
+[node name="Button2" type="TextureButton" parent="HUD/HUD"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 592.0
+offset_right = 5021.0
+offset_bottom = 1730.0
+scale = Vector2(0.0420275, 0.0420275)
+texture_normal = ExtResource("21_kvtif")
+texture_pressed = ExtResource("22_go0vd")
+texture_hover = ExtResource("23_unoja")
+
+[node name="quete" parent="HUD/HUD" instance=ExtResource("21_g0vm1")]
+layout_mode = 1
+offset_left = -266.0
+offset_top = 104.0
+offset_right = -266.0
+offset_bottom = 104.0
+scale = Vector2(0.549449, 0.549449)
+
+[node name="Popup" parent="HUD/HUD" instance=ExtResource("22_76wn5")]
+offset_left = 489.0
+offset_top = 19.0
+offset_right = 689.0
+offset_bottom = 219.0
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="HUD/HUD"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.900016, 0.900016)
+stream = ExtResource("27_6wwuc")
+
+[node name="Button_Sound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(800, 533)
+scale = Vector2(0.48, 0.520002)
+stream = ExtResource("20_86s7u")
+volume_db = 24.0
+
+[node name="tic_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("21_vtfhi")
+volume_db = 24.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_r18vr")
+}
+
+[node name="queteAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1yk74")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("30_ckvdj")
+volume_db = -10.0
+
+[connection signal="button_down" from="HUD/HUD/StartButton" to="." method="_on_touch_screen_button_button_down"]
+[connection signal="button_down" from="HUD/HUD/add_bet_button" to="." method="_on_add_bet_button_button_down"]
+[connection signal="button_down" from="HUD/HUD/substract_bet_button" to="." method="_on_substract_bet_button_button_down"]
+[connection signal="button_down" from="HUD/HUD/Button2" to="." method="_on_button_2_button_down"]
+[connection signal="finished" from="HUD/HUD/VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

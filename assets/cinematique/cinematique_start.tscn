@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://btyhdk7tqrhc4"]
+
+[ext_resource type="Script" path="res://assets/cinematique/CinematiqueStart.gd" id="1_hr6e4"]
+[ext_resource type="VideoStream" path="res://assets/cinematique/Start1.ogv" id="3_4vbcr"]
+[ext_resource type="Texture2D" uid="uid://dsjk2nil1mafd" path="res://assets/cinematique/image.png" id="3_w6p7w"]
+[ext_resource type="VideoStream" path="res://assets/cinematique/start2.ogv" id="4_uu5cj"]
+
+[node name="CinematiqueStart" type="Node2D"]
+script = ExtResource("1_hr6e4")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+metadata/_edit_use_anchors_ = true
+
+[node name="HUD" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="HUD/HUD"]
+layout_mode = 0
+offset_right = 1159.0
+offset_bottom = 654.0
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="HUD/HUD"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+scale = Vector2(0.900164, 0.900164)
+texture = ExtResource("3_w6p7w")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="HUD/HUD"]
+visible = false
+layout_mode = 1
+offset_right = 1280.0
+offset_bottom = 720.0
+scale = Vector2(0.9, 0.9)
+stream = ExtResource("3_4vbcr")
+volume_db = -10.0
+
+[node name="VideoStreamPlayer2" type="VideoStreamPlayer" parent="HUD/HUD"]
+visible = false
+layout_mode = 1
+offset_right = 1280.0
+offset_bottom = 720.0
+scale = Vector2(0.9, 0.9)
+stream = ExtResource("4_uu5cj")
+volume_db = -10.0
+
+[connection signal="finished" from="HUD/HUD/VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
+[connection signal="finished" from="HUD/HUD/VideoStreamPlayer2" to="." method="_on_video_stream_player_2_finished"]

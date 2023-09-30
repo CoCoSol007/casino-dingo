@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1xxoxucjdbtg"]
+
+[ext_resource type="Script" path="res://HUD/HUD.gd" id="1_at5dd"]
+[ext_resource type="FontFile" uid="uid://bkon3tj4yjn5a" path="res://assets/font.otf" id="2_e8u81"]
+[ext_resource type="PackedScene" uid="uid://bsq8yfy0vtath" path="res://Scenes/SwitchSceneButton/button.tscn" id="2_ycoks"]
+
+[node name="HUD" type="CanvasLayer"]
+metadata/_edit_use_anchors_ = true
+
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_at5dd")
+
+[node name="Label" type="Label" parent="HUD"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 31.0
+offset_right = 269.0
+offset_bottom = 99.0
+theme_override_fonts/font = ExtResource("2_e8u81")
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="Label2" type="Label" parent="HUD"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 82.0
+offset_right = 270.0
+offset_bottom = 150.0
+theme_override_fonts/font = ExtResource("2_e8u81")
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="Button" parent="HUD" instance=ExtResource("2_ycoks")]
+layout_mode = 0
+offset_left = 949.0
+offset_top = 549.0
+offset_right = 1113.0
+offset_bottom = 602.0

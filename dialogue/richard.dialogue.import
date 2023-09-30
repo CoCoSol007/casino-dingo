@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_8"
+type="Resource"
+uid="uid://g4sbs1udlo70"
+path="res://.godot/imported/richard.dialogue-d9bf842988dca6b075a4c2aec722d5c2.tres"
+
+[deps]
+
+source_file="res://dialogue/richard.dialogue"
+dest_files=["res://.godot/imported/richard.dialogue-d9bf842988dca6b075a4c2aec722d5c2.tres"]
+
+[params]
+
+defaults=true

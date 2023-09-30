@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_8"
+type="Resource"
+uid="uid://cuiu3xfmwekbo"
+path="res://.godot/imported/bilyBody.dialogue-e560305e69fe75419eaaaf7a786b5705.tres"
+
+[deps]
+
+source_file="res://dialogue/bilyBody.dialogue"
+dest_files=["res://.godot/imported/bilyBody.dialogue-e560305e69fe75419eaaaf7a786b5705.tres"]
+
+[params]
+
+defaults=true

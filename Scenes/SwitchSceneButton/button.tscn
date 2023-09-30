@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://bsq8yfy0vtath"]
+
+[ext_resource type="Script" path="res://Scenes/SwitchSceneButton/Button.gd" id="1_qm385"]
+[ext_resource type="Texture2D" uid="uid://deg84jy8na1f6" path="res://assets/button/home_buton.png" id="1_ur5eq"]
+[ext_resource type="Texture2D" uid="uid://cp5jm34hn3m1n" path="res://assets/button/home_buton_pressed.png" id="2_1os84"]
+[ext_resource type="Texture2D" uid="uid://c30l0yhru0ciu" path="res://assets/button/home_buton_hover.png" id="3_01tq8"]
+[ext_resource type="AudioStream" uid="uid://dlfxbmeaobnj3" path="res://sound/Clic.wav" id="5_g2mxo"]
+
+[node name="Button" type="TextureButton"]
+offset_right = 834.0
+offset_bottom = 858.0
+scale = Vector2(0.15, 0.15)
+size_flags_stretch_ratio = 5.89
+texture_normal = ExtResource("1_ur5eq")
+texture_pressed = ExtResource("2_1os84")
+texture_hover = ExtResource("3_01tq8")
+flip_h = true
+flip_v = true
+script = ExtResource("1_qm385")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_g2mxo")
+volume_db = 24.0
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://bjawj6qp7x2p"]
+
+[ext_resource type="Script" path="res://particule_casino.gd" id="1_4ibn8"]
+
+[sub_resource type="Gradient" id="Gradient_3i1cm"]
+offsets = PackedFloat32Array(0.509804, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_pnypb"]
+gradient = SubResource("Gradient_3i1cm")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jsv3b"]
+emission_shape = 3
+emission_box_extents = Vector3(100, 1, 1)
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 10, 0)
+initial_velocity_min = 150.0
+initial_velocity_max = 200.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 2.0
+scale_max = 5.0
+color_ramp = SubResource("GradientTexture1D_pnypb")
+
+[sub_resource type="Gradient" id="Gradient_n2njc"]
+offsets = PackedFloat32Array(0.509804, 1)
+colors = PackedColorArray(1, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ydxvd"]
+gradient = SubResource("Gradient_n2njc")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fhb6u"]
+emission_shape = 3
+emission_box_extents = Vector3(100, 1, 1)
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 10, 0)
+initial_velocity_min = 150.0
+initial_velocity_max = 200.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 2.0
+scale_max = 5.0
+color_ramp = SubResource("GradientTexture1D_ydxvd")
+
+[node name="particule_casino" type="Node2D"]
+script = ExtResource("1_4ibn8")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(98.8144, 100.408)
+emitting = false
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_jsv3b")
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.7
+trail_enabled = true
+trail_lifetime = 0.2
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+position = Vector2(98.8144, 100.408)
+emitting = false
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_fhb6u")
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.7
+trail_enabled = true
+trail_lifetime = 0.2

@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://b880357g68sb8"]
+
+[ext_resource type="Script" path="res://Scenes/ScripteGame/Playcart.gd" id="1_dnh3j"]
+[ext_resource type="Texture2D" uid="uid://c4270bx6unqly" path="res://assets/PlayCartAssets/1.png" id="2_2iyts"]
+[ext_resource type="Texture2D" uid="uid://8ewx2ildnoxc" path="res://assets/cart.png" id="2_nex4r"]
+[ext_resource type="Texture2D" uid="uid://llguj1e3a5i2" path="res://assets/PlayCartAssets/0.png" id="4_jl88r"]
+[ext_resource type="Texture2D" uid="uid://c4j5hdf70bsqr" path="res://assets/PlayCartAssets/coeur.png" id="5_kptmj"]
+
+[node name="PlayCart" type="TextureRect"]
+anchors_preset = -1
+anchor_right = 0.056
+anchor_bottom = 0.157
+offset_right = 0.487999
+offset_bottom = 0.264
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_nex4r")
+script = ExtResource("1_dnh3j")
+
+[node name="VBoxContainer1" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.01
+anchor_bottom = 0.01
+offset_top = -0.0200001
+offset_right = 3080.0
+offset_bottom = 1023.98
+grow_horizontal = 2
+scale = Vector2(0.014755, 0.014755)
+
+[node name="num" type="TextureRect" parent="VBoxContainer1"]
+layout_mode = 2
+texture = ExtResource("2_2iyts")
+
+[node name="num2" type="TextureRect" parent="VBoxContainer1"]
+layout_mode = 2
+texture = ExtResource("4_jl88r")
+
+[node name="color" type="TextureRect" parent="VBoxContainer1"]
+layout_mode = 2
+texture = ExtResource("5_kptmj")
+
+[node name="VBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.99
+anchor_right = 1.0
+anchor_bottom = 0.99
+offset_top = 0.019989
+offset_right = 3080.0
+offset_bottom = 1024.02
+rotation = 3.14159
+scale = Vector2(0.014755, 0.014755)
+
+[node name="num" type="TextureRect" parent="VBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("2_2iyts")
+
+[node name="num2" type="TextureRect" parent="VBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("4_jl88r")
+
+[node name="color" type="TextureRect" parent="VBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("5_kptmj")

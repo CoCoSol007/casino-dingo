@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://bvfeapmaqbrw3"]
+
+[ext_resource type="Script" path="res://Scenes/ScripteGame/Colun.gd" id="1_0skbx"]
+[ext_resource type="Texture2D" uid="uid://dw30ergdo7mbx" path="res://assets/Money.png" id="2_m8dyh"]
+
+[sub_resource type="Animation" id="Animation_mpy15"]
+resource_name = "slide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 500)]
+}
+
+[sub_resource type="Animation" id="Animation_o07jn"]
+resource_name = "stop"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 250)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5hl5t"]
+_data = {
+"slide": SubResource("Animation_mpy15"),
+"stop": SubResource("Animation_o07jn")
+}
+
+[node name="Colun" type="Node2D"]
+script = ExtResource("1_0skbx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 500)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_m8dyh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5hl5t")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

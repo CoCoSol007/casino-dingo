@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://xptrppk6f4pw"]
+
+[ext_resource type="Script" path="res://assets/quete/quete.gd" id="1_5c7il"]
+[ext_resource type="Texture2D" uid="uid://bi2ifi8xs1ydw" path="res://assets/quete/quete.png" id="2_2ccrq"]
+[ext_resource type="FontFile" uid="uid://bkon3tj4yjn5a" path="res://assets/font.otf" id="2_7o1th"]
+
+[node name="quete" type="Control"]
+layout_mode = 3
+anchor_right = 0.391
+anchor_bottom = 1.11
+offset_right = -0.432037
+offset_bottom = -0.280029
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_5c7il")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -10.0
+offset_right = 750.0
+offset_bottom = 1025.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.424417, 0.424417)
+texture = ExtResource("2_2ccrq")
+
+[node name="process" type="Label" parent="."]
+modulate = Color(0.377919, 0.377919, 0.377919, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 235.0
+offset_top = 143.0
+offset_right = -93.0
+offset_bottom = -400.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_7o1th")
+theme_override_font_sizes/font_size = 100
+text = "1/7"
+
+[node name="info" type="Label" parent="."]
+modulate = Color(0.377919, 0.377919, 0.377919, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 85.0
+offset_top = 330.0
+offset_right = -117.0
+offset_bottom = -109.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_7o1th")
+theme_override_font_sizes/font_size = 45
+text = "2000 jeton : gagner 2 fois d'affiler au Black Jack"
+horizontal_alignment = 1
+autowrap_mode = 3

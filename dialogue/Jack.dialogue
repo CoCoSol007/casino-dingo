@@ -1,0 +1,13 @@
+~ start
+
+Jack: Tu n'as plus d'ARGENT !! Je te turais sous les ordres du partron
+set GAME.emit_signal("kill")
+
+=> END
+
+~ PlusDeTemps
+
+Jack: Le patron t'avais laisser 1h mais... le temps est écouler. MEURT !
+set GAME.emit_signal("kill")
+
+=> END

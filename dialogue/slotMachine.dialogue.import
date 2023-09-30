@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_8"
+type="Resource"
+uid="uid://smlgrvxkuktv"
+path="res://.godot/imported/slotMachine.dialogue-7d62f6abb85ebb43cf0e0959e50fbf24.tres"
+
+[deps]
+
+source_file="res://dialogue/slotMachine.dialogue"
+dest_files=["res://.godot/imported/slotMachine.dialogue-7d62f6abb85ebb43cf0e0959e50fbf24.tres"]
+
+[params]
+
+defaults=true

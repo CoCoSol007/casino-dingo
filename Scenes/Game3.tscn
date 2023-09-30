@@ -1,0 +1,376 @@
+[gd_scene load_steps=36 format=3 uid="uid://ywchu4lyaft4"]
+
+[ext_resource type="Script" path="res://Scenes/ScripteGame/game3.gd" id="1_tk3bh"]
+[ext_resource type="Texture2D" uid="uid://dbl45jxsu5es2" path="res://assets/background.png" id="2_j4rhn"]
+[ext_resource type="Texture2D" uid="uid://gfxwv7yq4tw3" path="res://assets/Personnages/jack_angry1.png" id="3_054n3"]
+[ext_resource type="FontFile" uid="uid://bkon3tj4yjn5a" path="res://assets/font.otf" id="3_gj8qj"]
+[ext_resource type="Texture2D" uid="uid://cubaqgsy6has3" path="res://assets/Personnages/jack_angry2.png" id="4_mjvlc"]
+[ext_resource type="PackedScene" uid="uid://bsq8yfy0vtath" path="res://Scenes/SwitchSceneButton/button.tscn" id="4_mv60o"]
+[ext_resource type="Texture2D" uid="uid://cmp8gg87sw1hn" path="res://assets/Personnages/jack_happy1.png" id="5_3v7fe"]
+[ext_resource type="Texture2D" uid="uid://dw30ergdo7mbx" path="res://assets/Money.png" id="5_q46xq"]
+[ext_resource type="Texture2D" uid="uid://iia0a4d0mgt5" path="res://assets/Personnages/jack_happy2.png" id="6_6es1i"]
+[ext_resource type="Script" path="res://Scenes/ScripteGame/HUD_game3.gd" id="6_54tkp"]
+[ext_resource type="Texture2D" uid="uid://bfl7sgrn8d1ld" path="res://assets/carpet.png" id="7_ab7hg"]
+[ext_resource type="Script" path="res://Scenes/ScripteGame/AnimatedSprite2D.gd" id="7_tir34"]
+[ext_resource type="Texture2D" uid="uid://cyen1018vronu" path="res://assets/button/b4up.png" id="9_m0asg"]
+[ext_resource type="Texture2D" uid="uid://bb4m7g86ncqkx" path="res://assets/pioche.png" id="9_rrrmf"]
+[ext_resource type="Texture2D" uid="uid://ckr25sbxmancl" path="res://assets/button/b6up.png" id="9_yeqkq"]
+[ext_resource type="AudioStream" uid="uid://dlfxbmeaobnj3" path="res://sound/Clic.wav" id="10_fjuh8"]
+[ext_resource type="Texture2D" uid="uid://bmxl8ewu0o8xi" path="res://assets/button/b6down.png" id="10_ktjre"]
+[ext_resource type="Texture2D" uid="uid://cmbk1asa6fka2" path="res://assets/button/b5up.png" id="10_mqesk"]
+[ext_resource type="Texture2D" uid="uid://dyat6gokvpxu7" path="res://assets/button/b5hover.png" id="10_rhh5l"]
+[ext_resource type="Texture2D" uid="uid://hcr60khf5igi" path="res://assets/button/b5down.png" id="10_vfgiq"]
+[ext_resource type="Texture2D" uid="uid://whm1kc6n1ps8" path="res://assets/button/b6hover.png" id="11_5m3sh"]
+[ext_resource type="Texture2D" uid="uid://cwsbwc8304lm3" path="res://assets/button/b4down.png" id="13_f8o20"]
+[ext_resource type="Texture2D" uid="uid://bmt8gijwleiom" path="res://assets/button/b4hover.png" id="13_tqpq0"]
+[ext_resource type="Texture2D" uid="uid://coxxdsonbkhjd" path="res://assets/piochehover.png" id="16_m6rwd"]
+[ext_resource type="Texture2D" uid="uid://bco2veuad730j" path="res://assets/quete/quete_button.png" id="24_ltf80"]
+[ext_resource type="Texture2D" uid="uid://bblopq67xwam8" path="res://assets/quete/quete_button_pressed.png" id="25_6kj8x"]
+[ext_resource type="PackedScene" uid="uid://xptrppk6f4pw" path="res://assets/quete/quete.tscn" id="25_ghddb"]
+[ext_resource type="PackedScene" uid="uid://cae8iwfbgc6u6" path="res://assets/quete/popup.tscn" id="25_piwc6"]
+[ext_resource type="AudioStream" uid="uid://cl7tk7se72agb" path="res://sound/playCart.wav" id="25_raeuk"]
+[ext_resource type="Texture2D" uid="uid://k1728wunls0q" path="res://assets/quete/quete_button_hover.png" id="26_6domw"]
+[ext_resource type="VideoStream" path="res://assets/cinematique/jack.ogv" id="29_p2brm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ww0k1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_054n3")
+}],
+"loop": true,
+"name": &"ANGRY1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_mjvlc")
+}],
+"loop": true,
+"name": &"ANGRY2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_3v7fe")
+}],
+"loop": true,
+"name": &"HAPPY1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_6es1i")
+}],
+"loop": true,
+"name": &"HAPPY2",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_wyuby"]
+resource_name = "quete_close"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HUD/HUD/quete:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(48, 104), Vector2(-266, 104)]
+}
+
+[sub_resource type="Animation" id="Animation_lc7op"]
+resource_name = "quete_open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HUD/HUD/quete:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-266, 104), Vector2(47.9999, 104)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1yk74"]
+_data = {
+"quete_close": SubResource("Animation_wyuby"),
+"quete_open": SubResource("Animation_lc7op")
+}
+
+[node name="Game3" type="Node2D"]
+position = Vector2(0, 3)
+script = ExtResource("1_tk3bh")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(576, 321)
+scale = Vector2(0.656785, 0.522581)
+texture = ExtResource("2_j4rhn")
+
+[node name="Jack" type="AnimatedSprite2D" parent="."]
+position = Vector2(565, 240)
+scale = Vector2(0.255407, 0.255407)
+sprite_frames = SubResource("SpriteFrames_ww0k1")
+animation = &"ANGRY1"
+script = ExtResource("7_tir34")
+
+[node name="Timer" type="Timer" parent="Jack"]
+
+[node name="Money" type="Sprite2D" parent="."]
+position = Vector2(101.6, 84.6)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("5_q46xq")
+
+[node name="Carpet" type="Sprite2D" parent="."]
+position = Vector2(576.813, 489.5)
+scale = Vector2(0.337245, 0.337245)
+texture = ExtResource("7_ab7hg")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+metadata/_edit_use_anchors_ = true
+
+[node name="HUD" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_54tkp")
+
+[node name="Label" type="Label" parent="HUD/HUD"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 60.0
+offset_right = 394.0
+offset_bottom = 128.0
+theme_override_fonts/font = ExtResource("3_gj8qj")
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="Label2" type="Label" parent="HUD/HUD"]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 140.0
+offset_right = 395.0
+offset_bottom = 208.0
+theme_override_fonts/font = ExtResource("3_gj8qj")
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="Label3" type="Label" parent="HUD/HUD"]
+visible = false
+layout_mode = 0
+offset_left = 165.0
+offset_top = 218.0
+offset_right = 395.0
+offset_bottom = 286.0
+theme_override_fonts/font = ExtResource("3_gj8qj")
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="Label4" type="Label" parent="HUD/HUD"]
+visible = false
+layout_mode = 0
+offset_left = 743.0
+offset_top = 135.0
+offset_right = 973.0
+offset_bottom = 203.0
+theme_override_fonts/font = ExtResource("3_gj8qj")
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="HomeButton" parent="HUD/HUD" instance=ExtResource("4_mv60o")]
+layout_mode = 0
+offset_left = 965.0
+offset_top = 485.0
+offset_right = 1799.0
+offset_bottom = 1343.0
+targetScene = "res://Scenes/MainMenu.tscn"
+
+[node name="startbutton" type="TextureButton" parent="HUD/HUD"]
+layout_mode = 0
+offset_left = 828.0
+offset_top = 284.0
+offset_right = 3308.0
+offset_bottom = 2038.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("9_yeqkq")
+texture_pressed = ExtResource("10_ktjre")
+texture_hover = ExtResource("11_5m3sh")
+
+[node name="CenterContainer" type="CenterContainer" parent="HUD/HUD/startbutton"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 450.0
+offset_right = 577.0
+offset_bottom = 533.0
+scale = Vector2(9.28615, 9.28615)
+mouse_filter = 2
+
+[node name="Label4" type="Label" parent="HUD/HUD/startbutton/CenterContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_gj8qj")
+theme_override_font_sizes/font_size = 50
+text = "Start"
+
+[node name="PiocheButton" type="TextureButton" parent="HUD/HUD"]
+layout_mode = 0
+offset_left = 325.0
+offset_top = 464.0
+offset_right = 724.0
+offset_bottom = 790.0
+scale = Vector2(0.260927, 0.260927)
+texture_normal = ExtResource("9_rrrmf")
+texture_pressed = ExtResource("16_m6rwd")
+texture_hover = ExtResource("16_m6rwd")
+
+[node name="hand" type="HBoxContainer" parent="HUD/HUD"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -339.0
+offset_top = -126.0
+offset_right = 337.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="npc_hand" type="HBoxContainer" parent="HUD/HUD"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -203.0
+offset_top = -326.0
+offset_right = 202.0
+offset_bottom = -226.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="lost" type="Label" parent="HUD/HUD"]
+visible = false
+layout_mode = 0
+offset_left = 346.0
+offset_top = 7.0
+offset_right = 1084.0
+offset_bottom = 180.0
+scale = Vector2(0.630415, 0.630415)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_gj8qj")
+theme_override_font_sizes/font_size = 150
+text = "tu as Perdu"
+
+[node name="win" type="Label" parent="HUD/HUD"]
+visible = false
+layout_mode = 0
+offset_left = 346.0
+offset_top = 5.0
+offset_right = 1068.0
+offset_bottom = 178.0
+scale = Vector2(0.669517, 0.669517)
+theme_override_colors/font_color = Color(0.439216, 0.678431, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_gj8qj")
+theme_override_font_sizes/font_size = 150
+text = "Tu as Gagné"
+
+[node name="DownBetButton" type="TextureButton" parent="HUD/HUD"]
+layout_mode = 0
+offset_left = 758.0
+offset_top = 560.0
+offset_right = 994.0
+offset_bottom = 682.0
+scale = Vector2(0.33, 0.33)
+texture_normal = ExtResource("10_mqesk")
+texture_pressed = ExtResource("10_vfgiq")
+texture_hover = ExtResource("10_rhh5l")
+flip_h = true
+
+[node name="UpBetButton" type="TextureButton" parent="HUD/HUD"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.588542
+anchor_top = 0.865741
+anchor_right = 0.588542
+anchor_bottom = 0.865741
+offset_left = -0.00012207
+offset_top = -1.00012
+offset_right = 233.0
+offset_bottom = 121.0
+scale = Vector2(0.33, 0.33)
+texture_normal = ExtResource("9_m0asg")
+texture_pressed = ExtResource("13_f8o20")
+texture_hover = ExtResource("13_tqpq0")
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="TextureButton" parent="HUD/HUD"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 584.0
+offset_right = 5020.0
+offset_bottom = 1722.0
+scale = Vector2(0.0423905, 0.0423905)
+texture_normal = ExtResource("24_ltf80")
+texture_pressed = ExtResource("25_6kj8x")
+texture_hover = ExtResource("26_6domw")
+
+[node name="quete" parent="HUD/HUD" instance=ExtResource("25_ghddb")]
+layout_mode = 1
+offset_left = -266.0
+offset_top = 104.0
+offset_right = -266.432
+offset_bottom = 103.72
+scale = Vector2(0.549449, 0.549449)
+
+[node name="Popup" parent="HUD/HUD" instance=ExtResource("25_piwc6")]
+offset_left = 501.0
+offset_top = 9.0
+offset_right = 701.0
+offset_bottom = 209.0
+
+[node name="loose" type="VideoStreamPlayer" parent="HUD/HUD"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.90005, 0.90005)
+stream = ExtResource("29_p2brm")
+
+[node name="Button_Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_fjuh8")
+volume_db = 24.0
+
+[node name="playcart" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("25_raeuk")
+volume_db = -10.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="queteAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1yk74")
+}
+
+[connection signal="button_down" from="HUD/HUD/startbutton" to="." method="_on_startbutton_button_down"]
+[connection signal="button_down" from="HUD/HUD/PiocheButton" to="." method="_on_pioche_button_button_down"]
+[connection signal="button_down" from="HUD/HUD/DownBetButton" to="." method="_on_down_bet_button_button_down"]
+[connection signal="button_down" from="HUD/HUD/UpBetButton" to="." method="_on_up_bet_button_button_down"]
+[connection signal="button_down" from="HUD/HUD/Button" to="." method="_on_button_button_down"]
