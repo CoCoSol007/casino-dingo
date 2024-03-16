@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://doypbab0gqq6m"]
+[gd_scene load_steps=27 format=3 uid="uid://doypbab0gqq6m"]
 
 [ext_resource type="Script" path="res://Scenes/ScripteGame/MainMenu.gd" id="1_6v4tf"]
 [ext_resource type="Script" path="res://HUD/HUD.gd" id="1_jondv"]
@@ -15,7 +15,19 @@
 [ext_resource type="PackedScene" uid="uid://xptrppk6f4pw" path="res://assets/quete/quete.tscn" id="10_ysr28"]
 [ext_resource type="Texture2D" uid="uid://bblopq67xwam8" path="res://assets/quete/quete_button_pressed.png" id="11_up3b3"]
 [ext_resource type="Texture2D" uid="uid://k1728wunls0q" path="res://assets/quete/quete_button_hover.png" id="12_e2xjm"]
+[ext_resource type="Texture2D" uid="uid://ckr25sbxmancl" path="res://assets/button/b6up.png" id="14_ncwa7"]
+[ext_resource type="Texture2D" uid="uid://bmxl8ewu0o8xi" path="res://assets/button/b6down.png" id="15_0al05"]
 [ext_resource type="AudioStream" uid="uid://cl7tk7se72agb" path="res://sound/playCart.wav" id="16_i1dar"]
+[ext_resource type="Texture2D" uid="uid://whm1kc6n1ps8" path="res://assets/button/b6hover.png" id="16_v82yt"]
+
+[sub_resource type="GDScript" id="GDScript_ymsui"]
+resource_name = "quit_game"
+script/source = "extends TextureButton
+
+
+func _on_pressed():
+	get_tree().quit()
+"
 
 [sub_resource type="Gradient" id="Gradient_62our"]
 offsets = PackedFloat32Array(0.568627, 1)
@@ -194,10 +206,10 @@ texture = ExtResource("6_i6tu0")
 [node name="marc4" type="TextureButton" parent="HUD/HUD"]
 modulate = Color(1, 0.435294, 0.364706, 1)
 layout_mode = 0
-offset_left = 948.0
-offset_top = 530.0
-offset_right = 1782.0
-offset_bottom = 1388.0
+offset_left = 755.0
+offset_top = 533.0
+offset_right = 1589.0
+offset_bottom = 1391.0
 scale = Vector2(0.108107, 0.108107)
 texture_normal = ExtResource("7_17j87")
 texture_pressed = ExtResource("8_v4jhv")
@@ -208,9 +220,9 @@ flip_v = true
 [node name="Label3" type="Label" parent="HUD/HUD/marc4"]
 layout_mode = 0
 offset_left = -3006.28
-offset_top = 314.503
+offset_top = 231.253
 offset_right = -2387.28
-offset_bottom = 405.503
+offset_bottom = 322.253
 scale = Vector2(4.67404, 4.67404)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 4
@@ -236,6 +248,35 @@ offset_top = 104.0
 offset_right = -266.432
 offset_bottom = 103.72
 scale = Vector2(0.549449, 0.549449)
+
+[node name="TextureButton" type="TextureButton" parent="HUD/HUD"]
+modulate = Color(1, 0.435294, 0.364706, 1)
+layout_mode = 0
+offset_left = 1002.0
+offset_top = 543.0
+offset_right = 3482.0
+offset_bottom = 2297.0
+scale = Vector2(0.04, 0.04)
+texture_normal = ExtResource("14_ncwa7")
+texture_pressed = ExtResource("15_0al05")
+texture_hover = ExtResource("16_v82yt")
+script = SubResource("GDScript_ymsui")
+
+[node name="Label3" type="Label" parent="HUD/HUD/TextureButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.485
+anchor_bottom = 0.485
+offset_left = -2650.0
+offset_top = -450.69
+offset_right = -2126.0
+offset_bottom = -257.69
+scale = Vector2(4.67404, 4.67404)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_fonts/font = ExtResource("3_82bgv")
+theme_override_font_sizes/font_size = 168
+text = "quitter"
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(593, 7)
@@ -265,3 +306,4 @@ volume_db = -10.0
 
 [connection signal="button_down" from="HUD/HUD/marc4" to="." method="_on_texture_button_button_down"]
 [connection signal="button_down" from="HUD/HUD/Button" to="." method="_on_button_button_down"]
+[connection signal="pressed" from="HUD/HUD/TextureButton" to="HUD/HUD/TextureButton" method="_on_pressed"]

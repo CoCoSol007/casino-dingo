@@ -10,7 +10,7 @@ var BG_music: AudioStreamPlayer
 var pieceSound: AudioStreamPlayer
 var TimerGame:Timer
 
-var save_path = "C:/Users/"+OS.get_environment("USERNAME")+"/AppData/Roaming/SaveCasinoDingo.json"
+var save_path = "user://SaveCasinoDingo.json"
 
 var has_talk_to_richard = false
 var talk_to_bilyBoy = false
@@ -44,7 +44,7 @@ func _ready():
 	BG_music = AudioStreamPlayer.new()
 	BG_music.set_stream(load("res://sound/loop.ogg")) 
 	add_child(BG_music)
-	BG_music.set_volume_db(-30)
+	BG_music.set_volume_db(-10)
 	BG_music.play()
 	
 

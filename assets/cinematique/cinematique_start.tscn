@@ -1,9 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://btyhdk7tqrhc4"]
+[gd_scene load_steps=9 format=3 uid="uid://btyhdk7tqrhc4"]
 
 [ext_resource type="Script" path="res://assets/cinematique/CinematiqueStart.gd" id="1_hr6e4"]
 [ext_resource type="VideoStream" path="res://assets/cinematique/Start1.ogv" id="3_4vbcr"]
 [ext_resource type="Texture2D" uid="uid://dsjk2nil1mafd" path="res://assets/cinematique/image.png" id="3_w6p7w"]
 [ext_resource type="VideoStream" path="res://assets/cinematique/start2.ogv" id="4_uu5cj"]
+[ext_resource type="Texture2D" uid="uid://dxi5pcw507qwy" path="res://assets/button/Arow_button.png" id="5_veykt"]
+[ext_resource type="Texture2D" uid="uid://cxvtatet4qvor" path="res://assets/button/Arow_button_pressed.png" id="6_ulgsj"]
+[ext_resource type="Texture2D" uid="uid://cd2xi5og2nnu5" path="res://assets/button/Arow_button_hover.png" id="7_6anik"]
+
+[sub_resource type="GDScript" id="GDScript_eblqa"]
+resource_name = "skip_button"
+script/source = "extends TextureButton
+
+func _on_pressed():
+	get_tree().change_scene_to_file(\"res://Scenes/MainMenu.tscn\")
+"
 
 [node name="CinematiqueStart" type="Node2D"]
 script = ExtResource("1_hr6e4")
@@ -51,5 +62,19 @@ scale = Vector2(0.9, 0.9)
 stream = ExtResource("4_uu5cj")
 volume_db = -10.0
 
+[node name="skipButton" type="TextureButton" parent="HUD/HUD"]
+layout_mode = 0
+offset_left = 1057.0
+offset_top = 554.0
+offset_right = 1891.0
+offset_bottom = 1412.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("5_veykt")
+texture_pressed = ExtResource("6_ulgsj")
+texture_hover = ExtResource("7_6anik")
+flip_h = true
+script = SubResource("GDScript_eblqa")
+
 [connection signal="finished" from="HUD/HUD/VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
 [connection signal="finished" from="HUD/HUD/VideoStreamPlayer2" to="." method="_on_video_stream_player_2_finished"]
+[connection signal="pressed" from="HUD/HUD/skipButton" to="HUD/HUD/skipButton" method="_on_pressed"]

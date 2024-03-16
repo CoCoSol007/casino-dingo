@@ -1,10 +1,10 @@
 @tool
 extends Button
 
-const DialogueConstants = preload("res://addons/dialogue_manager/constants.gd")
+const DialogueConstants = preload("../constants.gd")
+const DialogueSettings = preload("../settings.gd")
 
 const REMOTE_RELEASES_URL = "https://api.github.com/repos/nathanhoad/godot_dialogue_manager/releases"
-const LOCAL_CONFIG_PATH = "res://addons/dialogue_manager/plugin.cfg"
 
 
 @onready var http_request: HTTPRequest = $HTTPRequest
@@ -34,13 +34,6 @@ func _ready() -> void:
 	timer.start(60 * 60 * 12)
 
 
-# Get the current version
-func get_version() -> String:
-	var config: ConfigFile = ConfigFile.new()
-	config.load(LOCAL_CONFIG_PATH)
-	return config.get_value("plugin", "version")
-
-
 # Convert a version number to an actually comparable number
 func version_to_number(version: String) -> int:
 	var bits = version.split(".")
@@ -63,7 +56,8 @@ func apply_theme() -> void:
 
 
 func check_for_update() -> void:
-	http_request.request(REMOTE_RELEASES_URL)
+	if DialogueSettings.get_user_value("check_for_updates", true):
+		http_request.request(REMOTE_RELEASES_URL)
 
 
 ### Signals
@@ -72,7 +66,7 @@ func check_for_update() -> void:
 func _on_http_request_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
 	if result != HTTPRequest.RESULT_SUCCESS: return
 
-	var current_version: String = get_version()
+	var current_version: String = editor_plugin.get_version()
 
 	# Work out the next version from the releases information on GitHub
 	var response = JSON.parse_string(body.get_string_from_utf8())
