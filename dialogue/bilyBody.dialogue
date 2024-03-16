@@ -3,38 +3,38 @@
 if not GAME.talk_to_bilyBoy:
 	BilyBoy: Bonjour mec, je suis le chef adjoint de ce vieux tas de ferraille à côté de moi. Il s'appelle Richard et il est grincheux.
 	You: Ahhh... d'accord, je suis venu ici pour lui rembourser une dette.
-	BilyBoy: Ah ça tombe bien, je peux te proposer de l'aide ! Tu pourras venir si tu as besoin d'argent ! Je te proposerais des quetes !
+	BilyBoy: Ah ça tombe bien, je peux te proposer de l'aide ! Tu pourras venir si tu as besoin d'argent ! Je te proposerais des quêtes !
 	set GAME.change_talk_to_bilyBoy(true)
 else:
 	if QUETE.current_quete == 0 and QUETE.get_price == 0:
 		set PERSONNAGE.emit_signal("change_state","BlilyBoy", "HAPPY")		
-		BilyBoy: Tien, Des quetes
-		- tu gagne 200 jetons si tu gagne 2 fois d'affiler au Black Jack
+		BilyBoy: Tiens, des quêtes
+		- Tu gagnes 200 jetons si tu gagnes 2 fois d'affilée au Black Jack.
 			set QUETE.emit_signal("new_quete", 1)
-		- tu gagne 1000 jetons si tu gagne 5 fois d'affiler au Black Jack
+		- Tu gagnes 1000 jetons si tu gagnes 5 fois d'affilée au Black Jack.
 			set QUETE.emit_signal("new_quete", 2)			
-		- tu gagne 5000 jetons si tu gagne 7 fois d'affiler au Black Jack
+		- Tu gagnes 5000 jetons si tu gagnes 7 fois d'affilée au Black Jack.
 			set QUETE.emit_signal("new_quete", 3)
-		- tu gagne 2000 jetons si tu gagne 2 fois d'affiler au Machine a sous 
+		- Tu gagnes 2000 jetons si tu gagnes 2 fois d'affilée à la Machine a sous.
 			set QUETE.emit_signal("new_quete", 4)
-		- tu gagne 10000 jetons si tu gagne 5 fois d'affiler au Machine a sous 
+		- Tu gagnes 10000 jetons si tu gagnes 5 fois d'affilée à la Machine a sous.
 			set QUETE.emit_signal("new_quete", 5)
-		- tu gagne 50000 jetons si tu gagne 7 fois d'affiler au Machine a sous 
+		- Tu gagnes 50000 jetons si tu gagnes 7 fois d'affilée à la Machine a sous.
 			set QUETE.emit_signal("new_quete", 6)
-		- rien !
+		- Rien !
 			set PERSONNAGE.emit_signal("change_state","BlilyBoy", "ANGRY")	
 	elif  QUETE.get_price != 0:
-		BilyBoy: Tu a fini ta quetes, tiens ton argent...
+		BilyBoy: Tu a fini ta quêtes, tiens ton argent...
 		set GAME.emit_signal("add_FCC", QUETE.get_all_price())
 		set QUETE.get_price = 0	
 	else:
 		set PERSONNAGE.emit_signal("change_state","BlilyBoy", "ANGRY")		
-		BilyBoy: Tu as deja une quete termine la et apres on parle ! Veux tu l'annuler ?
+		BilyBoy: Tu as déja une quête. Termine la et après on parle ! Veux tu l'annuler ?
 		- Oui
 			set QUETE.emit_signal("annuler")
 			BilyBoy: Triste...			
 		- Non
-			BilyBoy: bah vas l'acomplire sale idiot !
+			BilyBoy: bah vas l'accomplir sale idiot !
 		
 
 

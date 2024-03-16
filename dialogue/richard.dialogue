@@ -53,7 +53,7 @@ You: heuu...
 		if GAME.get_money() > 0:
 			set GAME.emit_signal("add_FCC", GAME.get_money() * 10)
 			set GAME.emit_signal("substract_money", GAME.get_money())
-			Richard: Ok, let's gooo. Tu intérêt à gagner.
+			Richard: Ok, let's gooo. Tu a intérêt à gagner.
 		else:
 			set PERSONNAGE.emit_signal("change_state","Richard", "ANGRY")
 			Richard: Tu n'as plus un sou, sale fou !
@@ -95,7 +95,7 @@ You: heuu...
 		if GAME.get_FCC() > 0:
 			set GAME.emit_signal("add_money", GAME.get_FCC() / 10)
 			set GAME.emit_signal("substract_FCC", GAME.get_FCC())
-			Richard: TOUT heuuu ok...
+			Richard: TOUT ? heuuu ok...
 		else:
 			set PERSONNAGE.emit_signal("change_state","Richard", "ANGRY")
 			Richard: Tu n'as plus de jetons, sale fou !
@@ -111,23 +111,23 @@ You: heuu...
 		set GAME.emit_signal("win")
 	else:
 		set PERSONNAGE.emit_signal("change_state","Richard", "ANGRY")
-		Richard: Espece de con tu n'as pas la thune vas travailler sale chomeur !!!
+		Richard: Espèce de con tu n'as pas la thune ! Vas travailler sale chômeur !!!
 => END
 
 ~ phone
 
 Richard: Salut. Comment ça va ??
-You: Salut mon vieux ami. J'ai une urgence !!! Question de vie ou de mort !!! Il faut que tu me prêtes une petite somme d'argent.
-Richard: Encore !!! Tu veux combien ??? Et j'espère que tu me les rembourseras, pas comme la dernière fois.
+You: Salut mon vieil ami. J'ai une urgence !!! Question de vie ou de mort !!! Il faut que tu me prêtes une petite somme d'argent.
+Richard: Encore ?!! Tu veux combien ??? Et j'espère que tu me les rembourseras, pas comme la dernière fois.
 You: Tu peux me faire confiance. Pour le montant, je te laisse t'en charger...
 Richard: OK, pas de soucis.
-Notification: Vous venez de recevoir un virement de la part de Richard 
+Notification: Vous venez de recevoir un virement de la part de Richard. 
 
 => END
 
 ~ PlusDeTemps
 
-Richard: JE T'AVAIS LAISSER 1H !!! Maintenent, c'est trop tard !!!
+Richard: JE T'AVAIS LAISSÉ 1H !!! Maintenant, c'est trop tard !!!
 set PERSONNAGE.emit_signal("change_state","Richard", "ANGRY")
 set GAME.emit_signal("kill")
 
