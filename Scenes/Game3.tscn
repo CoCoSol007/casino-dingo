@@ -333,9 +333,9 @@ texture_hover = ExtResource("26_6domw")
 
 [node name="quete" parent="HUD/HUD" instance=ExtResource("25_ghddb")]
 layout_mode = 1
-offset_left = 48.0
+offset_left = -266.0
 offset_top = 104.0
-offset_right = 47.568
+offset_right = -266.432
 offset_bottom = 103.72
 scale = Vector2(0.549449, 0.549449)
 
