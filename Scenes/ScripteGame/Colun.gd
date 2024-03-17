@@ -45,7 +45,7 @@ func _process(_delta):
 	
 func update_image():
 	sprite.set_texture(get_image())
-	sprite.set_global_scale(Vector2(0.1,0.1))
+	sprite.set_global_scale(Vector2(0.15,0.15))
 	
 func get_image(num = false):
 	var ret = "book"

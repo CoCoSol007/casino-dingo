@@ -38,12 +38,10 @@ gradient = SubResource("Gradient_62our")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6udhg"]
 lifetime_randomness = 1.0
+particle_flag_disable_z = true
 emission_shape = 3
 emission_box_extents = Vector3(576, 1, 1)
-particle_flag_disable_z = true
 gravity = Vector3(0, 200, 0)
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
 scale_min = 0.0
 scale_max = 0.01
 color_ramp = SubResource("GradientTexture1D_vwklg")
@@ -91,7 +89,7 @@ script = ExtResource("1_6v4tf")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(576, 323.5)
-scale = Vector2(0.218928, 0.368871)
+scale = Vector2(0.45, 0.759)
 texture = ExtResource("2_fh643")
 
 [node name="HUD" type="CanvasLayer" parent="."]
@@ -234,9 +232,9 @@ text = "reinitialiser le jeu"
 layout_mode = 0
 offset_left = -2.0
 offset_top = 568.0
-offset_right = 5020.0
-offset_bottom = 1706.0
-scale = Vector2(0.0501526, 0.0501526)
+offset_right = 1002.0
+offset_bottom = 796.0
+scale = Vector2(0.25, 0.25)
 texture_normal = ExtResource("10_gbdjt")
 texture_pressed = ExtResource("11_up3b3")
 texture_hover = ExtResource("12_e2xjm")
@@ -252,11 +250,11 @@ scale = Vector2(0.549449, 0.549449)
 [node name="TextureButton" type="TextureButton" parent="HUD/HUD"]
 modulate = Color(1, 0.435294, 0.364706, 1)
 layout_mode = 0
-offset_left = 1002.0
-offset_top = 543.0
-offset_right = 3482.0
-offset_bottom = 2297.0
-scale = Vector2(0.04, 0.04)
+offset_left = 1022.0
+offset_top = 540.0
+offset_right = 1642.0
+offset_bottom = 978.0
+scale = Vector2(0.16, 0.16)
 texture_normal = ExtResource("14_ncwa7")
 texture_pressed = ExtResource("15_0al05")
 texture_hover = ExtResource("16_v82yt")
@@ -267,15 +265,15 @@ layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.485
 anchor_bottom = 0.485
-offset_left = -2650.0
-offset_top = -450.69
-offset_right = -2126.0
-offset_bottom = -257.69
+offset_left = -983.333
+offset_top = -154.097
+offset_right = -809.333
+offset_bottom = -87.097
 scale = Vector2(4.67404, 4.67404)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 4
 theme_override_fonts/font = ExtResource("3_82bgv")
-theme_override_font_sizes/font_size = 168
+theme_override_font_sizes/font_size = 56
 text = "quitter"
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
@@ -286,13 +284,13 @@ texture = ExtResource("5_2ccat")
 lifetime = 5.0
 
 [node name="Money" type="Sprite2D" parent="."]
-position = Vector2(142, 204)
-scale = Vector2(0.05, 0.05)
+position = Vector2(135, 202)
+scale = Vector2(0.075, 0.075)
 texture = ExtResource("5_2ccat")
 
 [node name="Coin" type="Sprite2D" parent="."]
 position = Vector2(137, 85)
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("6_jtlyw")
 
 [node name="queteAnimation" type="AnimationPlayer" parent="."]

@@ -17,12 +17,10 @@ gradient = SubResource("Gradient_1nk68")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xp3fg"]
 lifetime_randomness = 1.0
+particle_flag_disable_z = true
 emission_shape = 3
 emission_box_extents = Vector3(576, 1, 1)
-particle_flag_disable_z = true
 gravity = Vector3(0, 200, 0)
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
 scale_min = 0.0
 scale_max = 0.01
 color_ramp = SubResource("GradientTexture1D_vwklg")

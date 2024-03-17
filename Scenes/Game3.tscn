@@ -125,7 +125,7 @@ script = ExtResource("7_tir34")
 
 [node name="Money" type="Sprite2D" parent="."]
 position = Vector2(101.6, 84.6)
-scale = Vector2(0.05, 0.05)
+scale = Vector2(0.075, 0.075)
 texture = ExtResource("5_q46xq")
 
 [node name="Carpet" type="Sprite2D" parent="."]
@@ -199,20 +199,20 @@ targetScene = "res://Scenes/MainMenu.tscn"
 layout_mode = 0
 offset_left = 828.0
 offset_top = 284.0
-offset_right = 3308.0
-offset_bottom = 2038.0
-scale = Vector2(0.1, 0.1)
+offset_right = 1448.0
+offset_bottom = 722.0
+scale = Vector2(0.4, 0.4)
 texture_normal = ExtResource("9_yeqkq")
 texture_pressed = ExtResource("10_ktjre")
 texture_hover = ExtResource("11_5m3sh")
 
 [node name="CenterContainer" type="CenterContainer" parent="HUD/HUD/startbutton"]
 layout_mode = 0
-offset_left = 400.0
-offset_top = 450.0
-offset_right = 577.0
-offset_bottom = 533.0
-scale = Vector2(9.28615, 9.28615)
+offset_left = 55.0
+offset_top = 42.4999
+offset_right = 255.0
+offset_bottom = 178.5
+scale = Vector2(2.591, 2.591)
 mouse_filter = 2
 
 [node name="Label4" type="Label" parent="HUD/HUD/startbutton/CenterContainer"]

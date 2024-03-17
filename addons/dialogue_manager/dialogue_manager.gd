@@ -1193,6 +1193,7 @@ func resolve_thing_method(thing, method: String, args: Array):
 
 	if thing.has_method(method):
 		# Try to convert any literals to the right type
+		print(thing.get_method_list().filter(func(m): return method == m.name)[0].args)
 		var method_args = thing.get_method_list().filter(func(m): return method == m.name)[0].args
 		if method_args.size() < args.size():
 			assert(false, DialogueConstants.translate("runtime.expected_n_got_n_args").format({ expected = method_args.size(), method = method, received = args.size()}))
