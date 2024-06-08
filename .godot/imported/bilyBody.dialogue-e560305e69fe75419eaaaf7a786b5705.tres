@@ -1,0 +1,712 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_hyvsu"]
+
+[resource]
+script = ExtResource("1_hyvsu")
+using_states = PackedStringArray()
+titles = {
+"start": "3"
+}
+character_names = PackedStringArray("BilyBoy", "You")
+first_title = "3"
+lines = {
+"1": {
+"id": "1",
+"next_id": "3",
+"text": "start",
+"type": &"title"
+},
+"10": {
+"id": "10",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "PERSONNAGE"
+}, {
+"type": "dot"
+}, {
+"function": "set_state",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "string",
+"value": "BlilyBoy"
+}]), Array[Dictionary]([{
+"type": "string",
+"value": "HAPPY"
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "11",
+"parent_id": "9",
+"type": &"mutation"
+},
+"11": {
+"character": "BilyBoy",
+"character_replacements": Array[Dictionary]([]),
+"id": "11",
+"next_id": "12",
+"notes": "",
+"parent_id": "9",
+"tags": PackedStringArray(),
+"text": "Tiens, des quêtes",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Tiens, des quêtes",
+"type": &"dialogue"
+},
+"12": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "12",
+"next_id": "13",
+"next_id_after": "41",
+"notes": "",
+"parent_id": "9",
+"responses": PackedStringArray("12", "14", "16", "18", "20", "22", "24"),
+"tags": PackedStringArray(),
+"text": "Tu gagnes 200 jetons si tu gagnes 2 fois d'affilée au Black Jack.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Tu gagnes 200 jetons si tu gagnes 2 fois d'affilée au Black Jack.",
+"type": &"response"
+},
+"13": {
+"id": "13",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "QUETE"
+}, {
+"type": "dot"
+}, {
+"function": "set_new_quete",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "number",
+"value": 1
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "41",
+"parent_id": "12",
+"type": &"mutation"
+},
+"14": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "14",
+"next_id": "15",
+"next_id_after": "41",
+"notes": "",
+"parent_id": "9",
+"tags": PackedStringArray(),
+"text": "Tu gagnes 1000 jetons si tu gagnes 5 fois d'affilée au Black Jack.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Tu gagnes 1000 jetons si tu gagnes 5 fois d'affilée au Black Jack.",
+"type": &"response"
+},
+"15": {
+"id": "15",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "QUETE"
+}, {
+"type": "dot"
+}, {
+"function": "set_new_quete",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "number",
+"value": 2
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "41",
+"parent_id": "14",
+"type": &"mutation"
+},
+"16": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "16",
+"next_id": "17",
+"next_id_after": "41",
+"notes": "",
+"parent_id": "9",
+"tags": PackedStringArray(),
+"text": "Tu gagnes 5000 jetons si tu gagnes 7 fois d'affilée au Black Jack.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Tu gagnes 5000 jetons si tu gagnes 7 fois d'affilée au Black Jack.",
+"type": &"response"
+},
+"17": {
+"id": "17",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "QUETE"
+}, {
+"type": "dot"
+}, {
+"function": "set_new_quete",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "number",
+"value": 3
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "41",
+"parent_id": "16",
+"type": &"mutation"
+},
+"18": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "18",
+"next_id": "19",
+"next_id_after": "41",
+"notes": "",
+"parent_id": "9",
+"tags": PackedStringArray(),
+"text": "Tu gagnes 2000 jetons si tu gagnes 2 fois d'affilée à la Machine a sous.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Tu gagnes 2000 jetons si tu gagnes 2 fois d'affilée à la Machine a sous.",
+"type": &"response"
+},
+"19": {
+"id": "19",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "QUETE"
+}, {
+"type": "dot"
+}, {
+"function": "set_new_quete",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "number",
+"value": 4
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "41",
+"parent_id": "18",
+"type": &"mutation"
+},
+"20": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "20",
+"next_id": "21",
+"next_id_after": "41",
+"notes": "",
+"parent_id": "9",
+"tags": PackedStringArray(),
+"text": "Tu gagnes 10000 jetons si tu gagnes 5 fois d'affilée à la Machine a sous.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Tu gagnes 10000 jetons si tu gagnes 5 fois d'affilée à la Machine a sous.",
+"type": &"response"
+},
+"21": {
+"id": "21",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "QUETE"
+}, {
+"type": "dot"
+}, {
+"function": "set_new_quete",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "number",
+"value": 5
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "41",
+"parent_id": "20",
+"type": &"mutation"
+},
+"22": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "22",
+"next_id": "23",
+"next_id_after": "41",
+"notes": "",
+"parent_id": "9",
+"tags": PackedStringArray(),
+"text": "Tu gagnes 50000 jetons si tu gagnes 7 fois d'affilée à la Machine a sous.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Tu gagnes 50000 jetons si tu gagnes 7 fois d'affilée à la Machine a sous.",
+"type": &"response"
+},
+"23": {
+"id": "23",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "QUETE"
+}, {
+"type": "dot"
+}, {
+"function": "set_new_quete",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "number",
+"value": 6
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "41",
+"parent_id": "22",
+"type": &"mutation"
+},
+"24": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "24",
+"next_id": "25",
+"next_id_after": "41",
+"notes": "",
+"parent_id": "9",
+"tags": PackedStringArray(),
+"text": "Rien !",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Rien !",
+"type": &"response"
+},
+"25": {
+"id": "25",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "PERSONNAGE"
+}, {
+"type": "dot"
+}, {
+"function": "set_state",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "string",
+"value": "BlilyBoy"
+}]), Array[Dictionary]([{
+"type": "string",
+"value": "ANGRY"
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "41",
+"parent_id": "24",
+"type": &"mutation"
+},
+"26": {
+"condition": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "QUETE"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "get_price"
+}, {
+"type": "comparison",
+"value": "!="
+}, {
+"type": "number",
+"value": 0
+}, {
+"type": "colon"
+}])
+},
+"id": "26",
+"next_conditional_id": "30",
+"next_id": "27",
+"next_id_after": "41",
+"parent_id": "8",
+"type": &"condition"
+},
+"27": {
+"character": "BilyBoy",
+"character_replacements": Array[Dictionary]([]),
+"id": "27",
+"next_id": "28",
+"notes": "",
+"parent_id": "26",
+"tags": PackedStringArray(),
+"text": "Tu a fini ta quêtes, tiens ton argent...",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Tu a fini ta quêtes, tiens ton argent...",
+"type": &"dialogue"
+},
+"28": {
+"id": "28",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "_add_FCC",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "variable",
+"value": "QUETE"
+}, {
+"type": "dot"
+}, {
+"function": "get_all_price",
+"type": &"function",
+"value": Array[Array]([])
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "29",
+"parent_id": "26",
+"type": &"mutation"
+},
+"29": {
+"id": "29",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "QUETE"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "get_price"
+}, {
+"type": "assignment",
+"value": "="
+}, {
+"type": "number",
+"value": 0
+}]),
+"is_blocking": true
+},
+"next_id": "41",
+"parent_id": "26",
+"type": &"mutation"
+},
+"3": {
+"condition": {
+"expression": Array[Dictionary]([{
+"type": "not"
+}, {
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "talk_to_bilyBoy"
+}, {
+"type": "colon"
+}])
+},
+"id": "3",
+"next_conditional_id": "8",
+"next_id": "4",
+"next_id_after": "41",
+"type": &"condition"
+},
+"30": {
+"id": "30",
+"next_conditional_id": "41",
+"next_id": "31",
+"next_id_after": "41",
+"parent_id": "8",
+"type": &"condition"
+},
+"31": {
+"id": "31",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "PERSONNAGE"
+}, {
+"type": "dot"
+}, {
+"function": "set_state",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "string",
+"value": "BlilyBoy"
+}]), Array[Dictionary]([{
+"type": "string",
+"value": "ANGRY"
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "32",
+"parent_id": "30",
+"type": &"mutation"
+},
+"32": {
+"character": "BilyBoy",
+"character_replacements": Array[Dictionary]([]),
+"id": "32",
+"next_id": "33",
+"notes": "",
+"parent_id": "30",
+"tags": PackedStringArray(),
+"text": "Tu as déja une quête. Termine la et après on parle ! Veux tu l'annuler ?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Tu as déja une quête. Termine la et après on parle ! Veux tu l'annuler ?",
+"type": &"dialogue"
+},
+"33": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "33",
+"next_id": "34",
+"next_id_after": "41",
+"notes": "",
+"parent_id": "30",
+"responses": PackedStringArray("33", "36"),
+"tags": PackedStringArray(),
+"text": "Oui",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Oui",
+"type": &"response"
+},
+"34": {
+"id": "34",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "QUETE"
+}, {
+"type": "dot"
+}, {
+"function": "emit_signal",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "string",
+"value": "annuler"
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "35",
+"parent_id": "33",
+"type": &"mutation"
+},
+"35": {
+"character": "BilyBoy",
+"character_replacements": Array[Dictionary]([]),
+"id": "35",
+"next_id": "41",
+"notes": "",
+"parent_id": "33",
+"tags": PackedStringArray(),
+"text": "Triste...",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Triste...",
+"type": &"dialogue"
+},
+"36": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "36",
+"next_id": "37",
+"next_id_after": "41",
+"notes": "",
+"parent_id": "30",
+"tags": PackedStringArray(),
+"text": "Non",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Non",
+"type": &"response"
+},
+"37": {
+"character": "BilyBoy",
+"character_replacements": Array[Dictionary]([]),
+"id": "37",
+"next_id": "41",
+"notes": "",
+"parent_id": "36",
+"tags": PackedStringArray(),
+"text": "bah vas l'accomplir sale idiot !",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "bah vas l'accomplir sale idiot !",
+"type": &"dialogue"
+},
+"4": {
+"character": "BilyBoy",
+"character_replacements": Array[Dictionary]([]),
+"id": "4",
+"next_id": "5",
+"notes": "",
+"parent_id": "3",
+"tags": PackedStringArray(),
+"text": "Bonjour mec, je suis le chef adjoint de ce vieux tas de ferraille à côté de moi. Il s'appelle Richard et il est grincheux.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Bonjour mec, je suis le chef adjoint de ce vieux tas de ferraille à côté de moi. Il s'appelle Richard et il est grincheux.",
+"type": &"dialogue"
+},
+"41": {
+"id": "41",
+"is_snippet": false,
+"next_id": "end",
+"type": &"goto"
+},
+"5": {
+"character": "You",
+"character_replacements": Array[Dictionary]([]),
+"id": "5",
+"next_id": "6",
+"notes": "",
+"parent_id": "3",
+"tags": PackedStringArray(),
+"text": "Ahhh... d'accord, je suis venu ici pour lui rembourser une dette.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Ahhh... d'accord, je suis venu ici pour lui rembourser une dette.",
+"type": &"dialogue"
+},
+"6": {
+"character": "BilyBoy",
+"character_replacements": Array[Dictionary]([]),
+"id": "6",
+"next_id": "7",
+"notes": "",
+"parent_id": "3",
+"tags": PackedStringArray(),
+"text": "Ah ça tombe bien, je peux te proposer de l'aide ! Tu pourras venir si tu as besoin d'argent ! Je te proposerais des quêtes !",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Ah ça tombe bien, je peux te proposer de l'aide ! Tu pourras venir si tu as besoin d'argent ! Je te proposerais des quêtes !",
+"type": &"dialogue"
+},
+"7": {
+"id": "7",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "change_talk_to_bilyBoy",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "variable",
+"value": "true"
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "41",
+"parent_id": "3",
+"type": &"mutation"
+},
+"8": {
+"id": "8",
+"next_conditional_id": "41",
+"next_id": "9",
+"next_id_after": "41",
+"type": &"condition"
+},
+"9": {
+"condition": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "QUETE"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "current_quete"
+}, {
+"type": "comparison",
+"value": "=="
+}, {
+"type": "number",
+"value": 0
+}, {
+"type": "and_or",
+"value": "and"
+}, {
+"type": "variable",
+"value": "QUETE"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "get_price"
+}, {
+"type": "comparison",
+"value": "=="
+}, {
+"type": "number",
+"value": 0
+}, {
+"type": "colon"
+}])
+},
+"id": "9",
+"next_conditional_id": "26",
+"next_id": "10",
+"next_id_after": "41",
+"parent_id": "8",
+"type": &"condition"
+}
+}
+raw_text = "~ start
+
+if not GAME.talk_to_bilyBoy:
+	BilyBoy: Bonjour mec, je suis le chef adjoint de ce vieux tas de ferraille à côté de moi. Il s'appelle Richard et il est grincheux.
+	You: Ahhh... d'accord, je suis venu ici pour lui rembourser une dette.
+	BilyBoy: Ah ça tombe bien, je peux te proposer de l'aide ! Tu pourras venir si tu as besoin d'argent ! Je te proposerais des quêtes !
+	do GAME.change_talk_to_bilyBoy(true)
+else:
+	if QUETE.current_quete == 0 and QUETE.get_price == 0:
+		do PERSONNAGE.set_state(\"BlilyBoy\", \"HAPPY\")
+		BilyBoy: Tiens, des quêtes
+		- Tu gagnes 200 jetons si tu gagnes 2 fois d'affilée au Black Jack.
+			do QUETE.set_new_quete(1)
+		- Tu gagnes 1000 jetons si tu gagnes 5 fois d'affilée au Black Jack.
+			do QUETE.set_new_quete(2)			
+		- Tu gagnes 5000 jetons si tu gagnes 7 fois d'affilée au Black Jack.
+			do QUETE.set_new_quete(3)
+		- Tu gagnes 2000 jetons si tu gagnes 2 fois d'affilée à la Machine a sous.
+			do QUETE.set_new_quete(4)
+		- Tu gagnes 10000 jetons si tu gagnes 5 fois d'affilée à la Machine a sous.
+			do QUETE.set_new_quete(5)
+		- Tu gagnes 50000 jetons si tu gagnes 7 fois d'affilée à la Machine a sous.
+			do QUETE.set_new_quete(6)
+		- Rien !
+			do PERSONNAGE.set_state(\"BlilyBoy\", \"ANGRY\")
+	elif  QUETE.get_price != 0:
+		BilyBoy: Tu a fini ta quêtes, tiens ton argent...
+		do GAME._add_FCC(QUETE.get_all_price())
+		do QUETE.get_price = 0
+	else:
+		do PERSONNAGE.set_state(\"BlilyBoy\", \"ANGRY\")
+		BilyBoy: Tu as déja une quête. Termine la et après on parle ! Veux tu l'annuler ?
+		- Oui
+			do QUETE.emit_signal(\"annuler\")
+			BilyBoy: Triste...
+		- Non
+			BilyBoy: bah vas l'accomplir sale idiot !
+		
+
+
+=> END
+"
+metadata/dialogue_manager_version = "2.39.1"
