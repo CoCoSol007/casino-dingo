@@ -1,0 +1,119 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_3qxq7"]
+
+[resource]
+script = ExtResource("1_3qxq7")
+using_states = PackedStringArray()
+titles = {
+"PlusDeTemps": "10",
+"start": "3"
+}
+character_names = PackedStringArray("Une machine qui parle")
+first_title = "3"
+lines = {
+"1": {
+"id": "1",
+"next_id": "3",
+"text": "start",
+"type": &"title"
+},
+"10": {
+"character": "Une machine qui parle",
+"character_replacements": Array[Dictionary]([]),
+"id": "10",
+"next_id": "11",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Le patron t'avais laissé 1h mais... le temps est écoulé. MEURT !",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Le patron t'avais laissé 1h mais... le temps est écoulé. MEURT !",
+"type": &"dialogue"
+},
+"11": {
+"id": "11",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "emit_signal",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "string",
+"value": "kill"
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "13",
+"type": &"mutation"
+},
+"13": {
+"id": "13",
+"is_snippet": false,
+"next_id": "end",
+"type": &"goto"
+},
+"3": {
+"character": "Une machine qui parle",
+"character_replacements": Array[Dictionary]([]),
+"id": "3",
+"next_id": "4",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Tu n'as plus d'ARGENT !! Je te tuerais sous les ordres du patron !",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Tu n'as plus d'ARGENT !! Je te tuerais sous les ordres du patron !",
+"type": &"dialogue"
+},
+"4": {
+"id": "4",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "emit_signal",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "string",
+"value": "kill"
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "6",
+"type": &"mutation"
+},
+"6": {
+"id": "6",
+"is_snippet": false,
+"next_id": "end",
+"type": &"goto"
+},
+"8": {
+"id": "8",
+"next_id": "10",
+"text": "PlusDeTemps",
+"type": &"title"
+}
+}
+raw_text = "~ start
+
+Une machine qui parle: Tu n'as plus d'ARGENT !! Je te tuerais sous les ordres du patron !
+set GAME.emit_signal(\"kill\")
+
+=> END
+
+~ PlusDeTemps
+
+Une machine qui parle: Le patron t'avais laissé 1h mais... le temps est écoulé. MEURT !
+set GAME.emit_signal(\"kill\")
+
+=> END"
+metadata/dialogue_manager_version = "2.39.1"

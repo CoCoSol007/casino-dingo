@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_0u0ln"]
+
+[resource]
+script = ExtResource("1_0u0ln")
+using_states = PackedStringArray()
+titles = {
+"start": "3"
+}
+character_names = PackedStringArray("Voix Off", "Voix dans ta tête")
+first_title = "3"
+lines = {
+"1": {
+"id": "1",
+"next_id": "3",
+"text": "start",
+"type": &"title"
+},
+"3": {
+"character": "Voix Off",
+"character_replacements": Array[Dictionary]([]),
+"id": "3",
+"next_id": "4",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Bienvenue au Casino Dingo, le casino où vous deviendrez dingo !!!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Bienvenue au Casino Dingo, le casino où vous deviendrez dingo !!!",
+"type": &"dialogue"
+},
+"4": {
+"character": "Voix dans ta tête",
+"character_replacements": Array[Dictionary]([]),
+"id": "4",
+"next_id": "6",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Hmmmmmm... cet endroit paraît très loufoque... Allons au comptoir voir Richard !",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Hmmmmmm... cet endroit paraît très loufoque... Allons au comptoir voir Richard !",
+"type": &"dialogue"
+},
+"6": {
+"id": "6",
+"is_snippet": false,
+"next_id": "end",
+"type": &"goto"
+}
+}
+raw_text = "~ start
+
+Voix Off: Bienvenue au Casino Dingo, le casino où vous deviendrez dingo !!!
+Voix dans ta tête: Hmmmmmm... cet endroit paraît très loufoque... Allons au comptoir voir Richard !
+
+=> END"
+metadata/dialogue_manager_version = "2.39.1"
