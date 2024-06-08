@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://doypbab0gqq6m"]
+[gd_scene load_steps=27 format=3 uid="uid://doypbab0gqq6m"]
 
 [ext_resource type="Script" path="res://Scenes/ScripteGame/MainMenu.gd" id="1_6v4tf"]
 [ext_resource type="Script" path="res://HUD/HUD.gd" id="1_jondv"]
@@ -15,7 +15,19 @@
 [ext_resource type="PackedScene" uid="uid://xptrppk6f4pw" path="res://assets/quete/quete.tscn" id="10_ysr28"]
 [ext_resource type="Texture2D" uid="uid://bblopq67xwam8" path="res://assets/quete/quete_button_pressed.png" id="11_up3b3"]
 [ext_resource type="Texture2D" uid="uid://k1728wunls0q" path="res://assets/quete/quete_button_hover.png" id="12_e2xjm"]
+[ext_resource type="Texture2D" uid="uid://ckr25sbxmancl" path="res://assets/button/b6up.png" id="14_ncwa7"]
+[ext_resource type="Texture2D" uid="uid://bmxl8ewu0o8xi" path="res://assets/button/b6down.png" id="15_0al05"]
 [ext_resource type="AudioStream" uid="uid://cl7tk7se72agb" path="res://sound/playCart.wav" id="16_i1dar"]
+[ext_resource type="Texture2D" uid="uid://whm1kc6n1ps8" path="res://assets/button/b6hover.png" id="16_v82yt"]
+
+[sub_resource type="GDScript" id="GDScript_ymsui"]
+resource_name = "quit_game"
+script/source = "extends TextureButton
+
+
+func _on_pressed():
+	get_tree().quit()
+"
 
 [sub_resource type="Gradient" id="Gradient_62our"]
 offsets = PackedFloat32Array(0.568627, 1)
@@ -26,12 +38,10 @@ gradient = SubResource("Gradient_62our")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6udhg"]
 lifetime_randomness = 1.0
+particle_flag_disable_z = true
 emission_shape = 3
 emission_box_extents = Vector3(576, 1, 1)
-particle_flag_disable_z = true
 gravity = Vector3(0, 200, 0)
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
 scale_min = 0.0
 scale_max = 0.01
 color_ramp = SubResource("GradientTexture1D_vwklg")
@@ -79,7 +89,7 @@ script = ExtResource("1_6v4tf")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(576, 323.5)
-scale = Vector2(0.218928, 0.368871)
+scale = Vector2(0.45, 0.759)
 texture = ExtResource("2_fh643")
 
 [node name="HUD" type="CanvasLayer" parent="."]
@@ -194,10 +204,10 @@ texture = ExtResource("6_i6tu0")
 [node name="marc4" type="TextureButton" parent="HUD/HUD"]
 modulate = Color(1, 0.435294, 0.364706, 1)
 layout_mode = 0
-offset_left = 948.0
-offset_top = 530.0
-offset_right = 1782.0
-offset_bottom = 1388.0
+offset_left = 755.0
+offset_top = 533.0
+offset_right = 1589.0
+offset_bottom = 1391.0
 scale = Vector2(0.108107, 0.108107)
 texture_normal = ExtResource("7_17j87")
 texture_pressed = ExtResource("8_v4jhv")
@@ -208,9 +218,9 @@ flip_v = true
 [node name="Label3" type="Label" parent="HUD/HUD/marc4"]
 layout_mode = 0
 offset_left = -3006.28
-offset_top = 314.503
+offset_top = 231.253
 offset_right = -2387.28
-offset_bottom = 405.503
+offset_bottom = 322.253
 scale = Vector2(4.67404, 4.67404)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 4
@@ -222,9 +232,9 @@ text = "reinitialiser le jeu"
 layout_mode = 0
 offset_left = -2.0
 offset_top = 568.0
-offset_right = 5020.0
-offset_bottom = 1706.0
-scale = Vector2(0.0501526, 0.0501526)
+offset_right = 1002.0
+offset_bottom = 796.0
+scale = Vector2(0.25, 0.25)
 texture_normal = ExtResource("10_gbdjt")
 texture_pressed = ExtResource("11_up3b3")
 texture_hover = ExtResource("12_e2xjm")
@@ -237,6 +247,35 @@ offset_right = -266.432
 offset_bottom = 103.72
 scale = Vector2(0.549449, 0.549449)
 
+[node name="TextureButton" type="TextureButton" parent="HUD/HUD"]
+modulate = Color(1, 0.435294, 0.364706, 1)
+layout_mode = 0
+offset_left = 1022.0
+offset_top = 540.0
+offset_right = 1642.0
+offset_bottom = 978.0
+scale = Vector2(0.16, 0.16)
+texture_normal = ExtResource("14_ncwa7")
+texture_pressed = ExtResource("15_0al05")
+texture_hover = ExtResource("16_v82yt")
+script = SubResource("GDScript_ymsui")
+
+[node name="Label3" type="Label" parent="HUD/HUD/TextureButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.485
+anchor_bottom = 0.485
+offset_left = -983.333
+offset_top = -154.097
+offset_right = -809.333
+offset_bottom = -87.097
+scale = Vector2(4.67404, 4.67404)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_fonts/font = ExtResource("3_82bgv")
+theme_override_font_sizes/font_size = 56
+text = "quitter"
+
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(593, 7)
 amount = 100
@@ -245,13 +284,13 @@ texture = ExtResource("5_2ccat")
 lifetime = 5.0
 
 [node name="Money" type="Sprite2D" parent="."]
-position = Vector2(142, 204)
-scale = Vector2(0.05, 0.05)
+position = Vector2(135, 202)
+scale = Vector2(0.075, 0.075)
 texture = ExtResource("5_2ccat")
 
 [node name="Coin" type="Sprite2D" parent="."]
 position = Vector2(137, 85)
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("6_jtlyw")
 
 [node name="queteAnimation" type="AnimationPlayer" parent="."]
@@ -265,3 +304,4 @@ volume_db = -10.0
 
 [connection signal="button_down" from="HUD/HUD/marc4" to="." method="_on_texture_button_button_down"]
 [connection signal="button_down" from="HUD/HUD/Button" to="." method="_on_button_button_down"]
+[connection signal="pressed" from="HUD/HUD/TextureButton" to="HUD/HUD/TextureButton" method="_on_pressed"]

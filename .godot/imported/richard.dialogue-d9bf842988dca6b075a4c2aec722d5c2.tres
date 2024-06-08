@@ -1,0 +1,2356 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_4xkvy"]
+
+[resource]
+script = ExtResource("1_4xkvy")
+using_states = PackedStringArray()
+titles = {
+"PlusDeTemps": "131",
+"phone": "120",
+"start": "3"
+}
+character_names = PackedStringArray("Richard", "You", "Notification")
+first_title = "3"
+lines = {
+"1": {
+"id": "1",
+"next_id": "3",
+"text": "start",
+"type": &"title"
+},
+"10": {
+"character": "Richard",
+"character_replacements": Array[Dictionary]([]),
+"id": "10",
+"next_id": "11",
+"notes": "",
+"parent_id": "3",
+"tags": PackedStringArray(),
+"text": "Mouais... bon, que veux-tu ?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Mouais... bon, que veux-tu ?",
+"type": &"dialogue"
+},
+"100": {
+"id": "100",
+"next_conditional_id": "116",
+"next_id": "101",
+"next_id_after": "116",
+"parent_id": "95",
+"type": &"condition"
+},
+"101": {
+"id": "101",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "PERSONNAGE"
+}, {
+"type": "dot"
+}, {
+"function": "set_state",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "string",
+"value": "Richard"
+}]), Array[Dictionary]([{
+"type": "string",
+"value": "ANGRY"
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "102",
+"parent_id": "100",
+"type": &"mutation"
+},
+"102": {
+"character": "Richard",
+"character_replacements": Array[Dictionary]([]),
+"id": "102",
+"next_id": "116",
+"notes": "",
+"parent_id": "100",
+"tags": PackedStringArray(),
+"text": "Tu n'as plus de jetons, sale fou !",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Tu n'as plus de jetons, sale fou !",
+"type": &"dialogue"
+},
+"103": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "103",
+"next_id": "104",
+"next_id_after": "116",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "J'en ai plus rien à BRANLER !! Je m'en fous de ma dette.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "J'en ai plus rien à BRANLER !! Je m'en fous de ma dette.",
+"type": &"response"
+},
+"104": {
+"id": "104",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "PERSONNAGE"
+}, {
+"type": "dot"
+}, {
+"function": "set_state",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "string",
+"value": "Richard"
+}]), Array[Dictionary]([{
+"type": "string",
+"value": "ANGRY"
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "105",
+"parent_id": "103",
+"type": &"mutation"
+},
+"105": {
+"character": "Richard",
+"character_replacements": Array[Dictionary]([]),
+"id": "105",
+"next_id": "106",
+"notes": "",
+"parent_id": "103",
+"tags": PackedStringArray(),
+"text": "ALOOOORS, JAMAIS ON NE M'AVAIT PARLÉ COMME ÇA. TU VAS PASSER UN SALE QUART D'HEURE !!!!!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "ALOOOORS, JAMAIS ON NE M'AVAIT PARLÉ COMME ÇA. TU VAS PASSER UN SALE QUART D'HEURE !!!!!",
+"type": &"dialogue"
+},
+"106": {
+"id": "106",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "emit_signal",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "string",
+"value": "kill"
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "116",
+"parent_id": "103",
+"type": &"mutation"
+},
+"107": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "107",
+"next_id": "108",
+"next_id_after": "116",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Je voudrais rembourser ma dette !",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Je voudrais rembourser ma dette !",
+"type": &"response"
+},
+"108": {
+"condition": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "get_money",
+"type": &"function",
+"value": Array[Array]([])
+}, {
+"type": "comparison",
+"value": ">="
+}, {
+"type": "number",
+"value": 10000
+}, {
+"type": "colon"
+}])
+},
+"id": "108",
+"next_conditional_id": "113",
+"next_id": "109",
+"next_id_after": "116",
+"parent_id": "107",
+"type": &"condition"
+},
+"109": {
+"character": "Richard",
+"character_replacements": Array[Dictionary]([]),
+"id": "109",
+"next_id": "110",
+"notes": "",
+"parent_id": "108",
+"tags": PackedStringArray(),
+"text": "ENFIN !!! Pas trop tôt !!! Je commençais à m'impatienter, moi ! Mais bon, tu me les as remboursés !",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "ENFIN !!! Pas trop tôt !!! Je commençais à m'impatienter, moi ! Mais bon, tu me les as remboursés !",
+"type": &"dialogue"
+},
+"11": {
+"id": "11",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "change_talk_to_richard",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "variable",
+"value": "true"
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "18",
+"parent_id": "3",
+"type": &"mutation"
+},
+"110": {
+"character": "You",
+"character_replacements": Array[Dictionary]([]),
+"id": "110",
+"next_id": "111",
+"notes": "",
+"parent_id": "108",
+"tags": PackedStringArray(),
+"text": "C'est avec plaisir !!! Maintenant je peux rentrer et jouer à Valo et rank-up Iron II.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "C'est avec plaisir !!! Maintenant je peux rentrer et jouer à Valo et rank-up Iron II.",
+"type": &"dialogue"
+},
+"111": {
+"character": "Richard",
+"character_replacements": Array[Dictionary]([]),
+"id": "111",
+"next_id": "112",
+"notes": "",
+"parent_id": "108",
+"tags": PackedStringArray(),
+"text": "Sale noob !",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Sale noob !",
+"type": &"dialogue"
+},
+"112": {
+"id": "112",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "emit_signal",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "string",
+"value": "win"
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "116",
+"parent_id": "108",
+"type": &"mutation"
+},
+"113": {
+"id": "113",
+"next_conditional_id": "116",
+"next_id": "114",
+"next_id_after": "116",
+"parent_id": "107",
+"type": &"condition"
+},
+"114": {
+"id": "114",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "PERSONNAGE"
+}, {
+"type": "dot"
+}, {
+"function": "set_state",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "string",
+"value": "Richard"
+}]), Array[Dictionary]([{
+"type": "string",
+"value": "ANGRY"
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "115",
+"parent_id": "113",
+"type": &"mutation"
+},
+"115": {
+"character": "Richard",
+"character_replacements": Array[Dictionary]([]),
+"id": "115",
+"next_id": "116",
+"notes": "",
+"parent_id": "113",
+"tags": PackedStringArray(),
+"text": "Espèce de con tu n'as pas la thune ! Vas travailler sale chômeur !!!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Espèce de con tu n'as pas la thune ! Vas travailler sale chômeur !!!",
+"type": &"dialogue"
+},
+"116": {
+"id": "116",
+"is_snippet": false,
+"next_id": "end",
+"type": &"goto"
+},
+"118": {
+"id": "118",
+"next_id": "120",
+"text": "phone",
+"type": &"title"
+},
+"12": {
+"id": "12",
+"next_conditional_id": "18",
+"next_id": "14",
+"next_id_after": "18",
+"type": &"condition"
+},
+"120": {
+"character": "Richard",
+"character_replacements": Array[Dictionary]([]),
+"id": "120",
+"next_id": "121",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Salut. Comment ça va ??",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Salut. Comment ça va ??",
+"type": &"dialogue"
+},
+"121": {
+"character": "You",
+"character_replacements": Array[Dictionary]([]),
+"id": "121",
+"next_id": "122",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Salut mon vieil ami. J'ai une urgence !!! Question de vie ou de mort !!! Il faut que tu me prêtes une petite somme d'argent.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Salut mon vieil ami. J'ai une urgence !!! Question de vie ou de mort !!! Il faut que tu me prêtes une petite somme d'argent.",
+"type": &"dialogue"
+},
+"122": {
+"character": "Richard",
+"character_replacements": Array[Dictionary]([]),
+"id": "122",
+"next_id": "123",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Encore ?!! Tu veux combien ??? Et j'espère que tu me les rembourseras, pas comme la dernière fois.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Encore ?!! Tu veux combien ??? Et j'espère que tu me les rembourseras, pas comme la dernière fois.",
+"type": &"dialogue"
+},
+"123": {
+"character": "You",
+"character_replacements": Array[Dictionary]([]),
+"id": "123",
+"next_id": "124",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Tu peux me faire confiance. Pour le montant, je te laisse t'en charger...",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Tu peux me faire confiance. Pour le montant, je te laisse t'en charger...",
+"type": &"dialogue"
+},
+"124": {
+"character": "Richard",
+"character_replacements": Array[Dictionary]([]),
+"id": "124",
+"next_id": "125",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "OK, pas de soucis.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "OK, pas de soucis.",
+"type": &"dialogue"
+},
+"125": {
+"character": "Notification",
+"character_replacements": Array[Dictionary]([]),
+"id": "125",
+"next_id": "127",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Vous venez de recevoir un virement de la part de Richard.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Vous venez de recevoir un virement de la part de Richard.",
+"type": &"dialogue"
+},
+"127": {
+"id": "127",
+"is_snippet": false,
+"next_id": "end",
+"type": &"goto"
+},
+"129": {
+"id": "129",
+"next_id": "131",
+"text": "PlusDeTemps",
+"type": &"title"
+},
+"131": {
+"character": "Richard",
+"character_replacements": Array[Dictionary]([]),
+"id": "131",
+"next_id": "132",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "JE T'AVAIS LAISSÉ 1H !!! Maintenant, c'est trop tard !!!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "JE T'AVAIS LAISSÉ 1H !!! Maintenant, c'est trop tard !!!",
+"type": &"dialogue"
+},
+"132": {
+"id": "132",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "PERSONNAGE"
+}, {
+"type": "dot"
+}, {
+"function": "set_state",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "string",
+"value": "Richard"
+}]), Array[Dictionary]([{
+"type": "string",
+"value": "ANGRY"
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "133",
+"type": &"mutation"
+},
+"133": {
+"id": "133",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "emit_signal",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "string",
+"value": "kill"
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "135",
+"type": &"mutation"
+},
+"135": {
+"id": "135",
+"is_snippet": false,
+"next_id": "end",
+"type": &"goto"
+},
+"14": {
+"id": "14",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "PERSONNAGE"
+}, {
+"type": "dot"
+}, {
+"function": "set_state",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "string",
+"value": "Richard"
+}]), Array[Dictionary]([{
+"type": "string",
+"value": "HAPPY"
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "15",
+"parent_id": "12",
+"type": &"mutation"
+},
+"15": {
+"character": "Richard",
+"character_replacements": Array[Dictionary]([]),
+"id": "15",
+"next_id": "16",
+"notes": "",
+"parent_id": "12",
+"tags": PackedStringArray(),
+"text": "[[C'est bon, tu as la moula ??|Tu viens me rendre mon blé ?|AAAAAhhhhhhh, tu as enfin le pognon..]] Je savais que je pouvais compter sur toi !",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "[[C'est bon, tu as la moula ??|Tu viens me rendre mon blé ?|AAAAAhhhhhhh, tu as enfin le pognon..]] Je savais que je pouvais compter sur toi !",
+"type": &"dialogue"
+},
+"16": {
+"character": "You",
+"character_replacements": Array[Dictionary]([]),
+"id": "16",
+"next_id": "18",
+"notes": "",
+"parent_id": "12",
+"tags": PackedStringArray(),
+"text": "Alors heuuuuu, je n'ai pas ton argent, mais...",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Alors heuuuuu, je n'ai pas ton argent, mais...",
+"type": &"dialogue"
+},
+"18": {
+"character": "You",
+"character_replacements": Array[Dictionary]([]),
+"id": "18",
+"next_id": "19",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "heuu...",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "heuu...",
+"type": &"dialogue"
+},
+"19": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "19",
+"next_id": "20",
+"next_id_after": "116",
+"notes": "",
+"responses": PackedStringArray("19", "61", "103", "107"),
+"tags": PackedStringArray(),
+"text": "Je pourrais avoir des jetons ?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Je pourrais avoir des jetons ?",
+"type": &"response"
+},
+"20": {
+"character": "Richard",
+"character_replacements": Array[Dictionary]([]),
+"id": "20",
+"next_id": "21",
+"notes": "",
+"parent_id": "19",
+"tags": PackedStringArray(),
+"text": "Aller, tu en veux combien ?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Aller, tu en veux combien ?",
+"type": &"dialogue"
+},
+"21": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "21",
+"next_id": "22",
+"next_id_after": "116",
+"notes": "",
+"parent_id": "19",
+"responses": PackedStringArray("21", "29", "37", "45", "53"),
+"tags": PackedStringArray(),
+"text": "500 jetons pour 50 $",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "500 jetons pour 50 $",
+"type": &"response"
+},
+"22": {
+"condition": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "get_money",
+"type": &"function",
+"value": Array[Array]([])
+}, {
+"type": "operator",
+"value": "-"
+}, {
+"type": "number",
+"value": 50
+}, {
+"type": "comparison",
+"value": ">="
+}, {
+"type": "number",
+"value": 0
+}, {
+"type": "colon"
+}])
+},
+"id": "22",
+"next_conditional_id": "26",
+"next_id": "23",
+"next_id_after": "116",
+"parent_id": "21",
+"type": &"condition"
+},
+"23": {
+"id": "23",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "_add_FCC",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "number",
+"value": 500
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "24",
+"parent_id": "22",
+"type": &"mutation"
+},
+"24": {
+"id": "24",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "_substract_money",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "number",
+"value": 50
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "25",
+"parent_id": "22",
+"type": &"mutation"
+},
+"25": {
+"character": "Richard",
+"character_replacements": Array[Dictionary]([]),
+"id": "25",
+"next_id": "116",
+"notes": "",
+"parent_id": "22",
+"tags": PackedStringArray(),
+"text": "Seulement 500 ? Mais t'as pas un rond !!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Seulement 500 ? Mais t'as pas un rond !!",
+"type": &"dialogue"
+},
+"26": {
+"id": "26",
+"next_conditional_id": "116",
+"next_id": "27",
+"next_id_after": "116",
+"parent_id": "21",
+"type": &"condition"
+},
+"27": {
+"id": "27",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "PERSONNAGE"
+}, {
+"type": "dot"
+}, {
+"function": "set_state",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "string",
+"value": "Richard"
+}]), Array[Dictionary]([{
+"type": "string",
+"value": "ANGRY"
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "28",
+"parent_id": "26",
+"type": &"mutation"
+},
+"28": {
+"character": "Richard",
+"character_replacements": Array[Dictionary]([]),
+"id": "28",
+"next_id": "116",
+"notes": "",
+"parent_id": "26",
+"tags": PackedStringArray(),
+"text": "Tu veux m'arnaquer, sale idiot.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Tu veux m'arnaquer, sale idiot.",
+"type": &"dialogue"
+},
+"29": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "29",
+"next_id": "30",
+"next_id_after": "116",
+"notes": "",
+"parent_id": "19",
+"tags": PackedStringArray(),
+"text": "1000 jetons pour 100 $",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "1000 jetons pour 100 $",
+"type": &"response"
+},
+"3": {
+"condition": {
+"expression": Array[Dictionary]([{
+"type": "not"
+}, {
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "has_talk_to_richard"
+}, {
+"type": "colon"
+}])
+},
+"id": "3",
+"next_conditional_id": "12",
+"next_id": "4",
+"next_id_after": "18",
+"type": &"condition"
+},
+"30": {
+"condition": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "get_money",
+"type": &"function",
+"value": Array[Array]([])
+}, {
+"type": "operator",
+"value": "-"
+}, {
+"type": "number",
+"value": 100
+}, {
+"type": "comparison",
+"value": ">="
+}, {
+"type": "number",
+"value": 0
+}, {
+"type": "colon"
+}])
+},
+"id": "30",
+"next_conditional_id": "34",
+"next_id": "31",
+"next_id_after": "116",
+"parent_id": "29",
+"type": &"condition"
+},
+"31": {
+"id": "31",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "_add_FCC",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "number",
+"value": 1000
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "32",
+"parent_id": "30",
+"type": &"mutation"
+},
+"32": {
+"id": "32",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "_substract_money",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "number",
+"value": 100
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "33",
+"parent_id": "30",
+"type": &"mutation"
+},
+"33": {
+"character": "Richard",
+"character_replacements": Array[Dictionary]([]),
+"id": "33",
+"next_id": "116",
+"notes": "",
+"parent_id": "30",
+"tags": PackedStringArray(),
+"text": "Vas pour 1000, à très vite avec mon argent.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Vas pour 1000, à très vite avec mon argent.",
+"type": &"dialogue"
+},
+"34": {
+"id": "34",
+"next_conditional_id": "116",
+"next_id": "35",
+"next_id_after": "116",
+"parent_id": "29",
+"type": &"condition"
+},
+"35": {
+"id": "35",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "PERSONNAGE"
+}, {
+"type": "dot"
+}, {
+"function": "set_state",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "string",
+"value": "Richard"
+}]), Array[Dictionary]([{
+"type": "string",
+"value": "ANGRY"
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "36",
+"parent_id": "34",
+"type": &"mutation"
+},
+"36": {
+"character": "Richard",
+"character_replacements": Array[Dictionary]([]),
+"id": "36",
+"next_id": "116",
+"notes": "",
+"parent_id": "34",
+"tags": PackedStringArray(),
+"text": "Tu veux m'arnaquer, sale idiot.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Tu veux m'arnaquer, sale idiot.",
+"type": &"dialogue"
+},
+"37": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "37",
+"next_id": "38",
+"next_id_after": "116",
+"notes": "",
+"parent_id": "19",
+"tags": PackedStringArray(),
+"text": "5000 jetons pour 500 $",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "5000 jetons pour 500 $",
+"type": &"response"
+},
+"38": {
+"condition": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "get_money",
+"type": &"function",
+"value": Array[Array]([])
+}, {
+"type": "operator",
+"value": "-"
+}, {
+"type": "number",
+"value": 500
+}, {
+"type": "comparison",
+"value": ">="
+}, {
+"type": "number",
+"value": 0
+}, {
+"type": "colon"
+}])
+},
+"id": "38",
+"next_conditional_id": "42",
+"next_id": "39",
+"next_id_after": "116",
+"parent_id": "37",
+"type": &"condition"
+},
+"39": {
+"id": "39",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "_add_FCC",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "number",
+"value": 5000
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "40",
+"parent_id": "38",
+"type": &"mutation"
+},
+"4": {
+"character": "Richard",
+"character_replacements": Array[Dictionary]([]),
+"id": "4",
+"next_id": "5",
+"notes": "",
+"parent_id": "3",
+"tags": PackedStringArray(),
+"text": "Enfin, tu arrives ! J'espère que tu as mon fric ! Mes pauvres petits 10 000 $ !!!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Enfin, tu arrives ! J'espère que tu as mon fric ! Mes pauvres petits 10 000 $ !!!",
+"type": &"dialogue"
+},
+"40": {
+"id": "40",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "_substract_money",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "number",
+"value": 500
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "41",
+"parent_id": "38",
+"type": &"mutation"
+},
+"41": {
+"character": "Richard",
+"character_replacements": Array[Dictionary]([]),
+"id": "41",
+"next_id": "116",
+"notes": "",
+"parent_id": "38",
+"tags": PackedStringArray(),
+"text": "Vas pour 5000, à très vite avec mon argent.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Vas pour 5000, à très vite avec mon argent.",
+"type": &"dialogue"
+},
+"42": {
+"id": "42",
+"next_conditional_id": "116",
+"next_id": "43",
+"next_id_after": "116",
+"parent_id": "37",
+"type": &"condition"
+},
+"43": {
+"id": "43",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "PERSONNAGE"
+}, {
+"type": "dot"
+}, {
+"function": "set_state",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "string",
+"value": "Richard"
+}]), Array[Dictionary]([{
+"type": "string",
+"value": "ANGRY"
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "44",
+"parent_id": "42",
+"type": &"mutation"
+},
+"44": {
+"character": "Richard",
+"character_replacements": Array[Dictionary]([]),
+"id": "44",
+"next_id": "116",
+"notes": "",
+"parent_id": "42",
+"tags": PackedStringArray(),
+"text": "Tu veux m'arnaquer, sale idiot.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Tu veux m'arnaquer, sale idiot.",
+"type": &"dialogue"
+},
+"45": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "45",
+"next_id": "46",
+"next_id_after": "116",
+"notes": "",
+"parent_id": "19",
+"tags": PackedStringArray(),
+"text": "10000 jetons pour 1000 $",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "10000 jetons pour 1000 $",
+"type": &"response"
+},
+"46": {
+"condition": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "get_money",
+"type": &"function",
+"value": Array[Array]([])
+}, {
+"type": "operator",
+"value": "-"
+}, {
+"type": "number",
+"value": 1000
+}, {
+"type": "comparison",
+"value": ">="
+}, {
+"type": "number",
+"value": 0
+}, {
+"type": "colon"
+}])
+},
+"id": "46",
+"next_conditional_id": "50",
+"next_id": "47",
+"next_id_after": "116",
+"parent_id": "45",
+"type": &"condition"
+},
+"47": {
+"id": "47",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "_add_FCC",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "number",
+"value": 10000
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "48",
+"parent_id": "46",
+"type": &"mutation"
+},
+"48": {
+"id": "48",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "_substract_money",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "number",
+"value": 1000
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "49",
+"parent_id": "46",
+"type": &"mutation"
+},
+"49": {
+"character": "Richard",
+"character_replacements": Array[Dictionary]([]),
+"id": "49",
+"next_id": "116",
+"notes": "",
+"parent_id": "46",
+"tags": PackedStringArray(),
+"text": "Vas pour 10000, à très vite avec mon argent.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Vas pour 10000, à très vite avec mon argent.",
+"type": &"dialogue"
+},
+"5": {
+"character": "You",
+"character_replacements": Array[Dictionary]([]),
+"id": "5",
+"next_id": "6",
+"notes": "",
+"parent_id": "3",
+"tags": PackedStringArray(),
+"text": "Heureux de te revoir aussi, Richard ! Je suis venu ici avec 100 $ ! Je voudrais jouer dans ton casino pour rembourser ma dette.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Heureux de te revoir aussi, Richard ! Je suis venu ici avec 100 $ ! Je voudrais jouer dans ton casino pour rembourser ma dette.",
+"type": &"dialogue"
+},
+"50": {
+"id": "50",
+"next_conditional_id": "116",
+"next_id": "51",
+"next_id_after": "116",
+"parent_id": "45",
+"type": &"condition"
+},
+"51": {
+"id": "51",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "PERSONNAGE"
+}, {
+"type": "dot"
+}, {
+"function": "set_state",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "string",
+"value": "Richard"
+}]), Array[Dictionary]([{
+"type": "string",
+"value": "ANGRY"
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "52",
+"parent_id": "50",
+"type": &"mutation"
+},
+"52": {
+"character": "Richard",
+"character_replacements": Array[Dictionary]([]),
+"id": "52",
+"next_id": "116",
+"notes": "",
+"parent_id": "50",
+"tags": PackedStringArray(),
+"text": "Tu veux m'arnaquer, sale idiot.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Tu veux m'arnaquer, sale idiot.",
+"type": &"dialogue"
+},
+"53": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "53",
+"next_id": "54",
+"next_id_after": "116",
+"notes": "",
+"parent_id": "19",
+"tags": PackedStringArray(),
+"text": "Pour tout mon argent !",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Pour tout mon argent !",
+"type": &"response"
+},
+"54": {
+"condition": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "get_money",
+"type": &"function",
+"value": Array[Array]([])
+}, {
+"type": "comparison",
+"value": ">"
+}, {
+"type": "number",
+"value": 0
+}, {
+"type": "colon"
+}])
+},
+"id": "54",
+"next_conditional_id": "58",
+"next_id": "55",
+"next_id_after": "116",
+"parent_id": "53",
+"type": &"condition"
+},
+"55": {
+"id": "55",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "_add_FCC",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "get_money",
+"type": &"function",
+"value": Array[Array]([])
+}, {
+"type": "operator",
+"value": "*"
+}, {
+"type": "number",
+"value": 10
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "56",
+"parent_id": "54",
+"type": &"mutation"
+},
+"56": {
+"id": "56",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "_substract_money",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "get_money",
+"type": &"function",
+"value": Array[Array]([])
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "57",
+"parent_id": "54",
+"type": &"mutation"
+},
+"57": {
+"character": "Richard",
+"character_replacements": Array[Dictionary]([]),
+"id": "57",
+"next_id": "116",
+"notes": "",
+"parent_id": "54",
+"tags": PackedStringArray(),
+"text": "Ok, let's gooo. Tu a intérêt à gagner.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Ok, let's gooo. Tu a intérêt à gagner.",
+"type": &"dialogue"
+},
+"58": {
+"id": "58",
+"next_conditional_id": "116",
+"next_id": "59",
+"next_id_after": "116",
+"parent_id": "53",
+"type": &"condition"
+},
+"59": {
+"id": "59",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "PERSONNAGE"
+}, {
+"type": "dot"
+}, {
+"function": "set_state",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "string",
+"value": "Richard"
+}]), Array[Dictionary]([{
+"type": "string",
+"value": "ANGRY"
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "60",
+"parent_id": "58",
+"type": &"mutation"
+},
+"6": {
+"id": "6",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "PERSONNAGE"
+}, {
+"type": "dot"
+}, {
+"function": "set_state",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "string",
+"value": "Richard"
+}]), Array[Dictionary]([{
+"type": "string",
+"value": "ANGRY"
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "7",
+"parent_id": "3",
+"type": &"mutation"
+},
+"60": {
+"character": "Richard",
+"character_replacements": Array[Dictionary]([]),
+"id": "60",
+"next_id": "116",
+"notes": "",
+"parent_id": "58",
+"tags": PackedStringArray(),
+"text": "Tu n'as plus un sou, sale fou !",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Tu n'as plus un sou, sale fou !",
+"type": &"dialogue"
+},
+"61": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "61",
+"next_id": "62",
+"next_id_after": "116",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Je pourrais échanger mes jetons ?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Je pourrais échanger mes jetons ?",
+"type": &"response"
+},
+"62": {
+"character": "Richard",
+"character_replacements": Array[Dictionary]([]),
+"id": "62",
+"next_id": "63",
+"notes": "",
+"parent_id": "61",
+"tags": PackedStringArray(),
+"text": "Tu veux te refaire de la thune !! C'est pour me rembourser, j'espère... Tu veux échanger combien de jetons ??",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Tu veux te refaire de la thune !! C'est pour me rembourser, j'espère... Tu veux échanger combien de jetons ??",
+"type": &"dialogue"
+},
+"63": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "63",
+"next_id": "64",
+"next_id_after": "116",
+"notes": "",
+"parent_id": "61",
+"responses": PackedStringArray("63", "71", "79", "87", "95"),
+"tags": PackedStringArray(),
+"text": "50 $ pour 500 jetons",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "50 $ pour 500 jetons",
+"type": &"response"
+},
+"64": {
+"condition": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "get_FCC",
+"type": &"function",
+"value": Array[Array]([])
+}, {
+"type": "operator",
+"value": "-"
+}, {
+"type": "number",
+"value": 500
+}, {
+"type": "comparison",
+"value": ">="
+}, {
+"type": "number",
+"value": 0
+}, {
+"type": "colon"
+}])
+},
+"id": "64",
+"next_conditional_id": "68",
+"next_id": "65",
+"next_id_after": "116",
+"parent_id": "63",
+"type": &"condition"
+},
+"65": {
+"id": "65",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "_add_money",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "number",
+"value": 50
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "66",
+"parent_id": "64",
+"type": &"mutation"
+},
+"66": {
+"id": "66",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "_substract_FCC",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "number",
+"value": 500
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "67",
+"parent_id": "64",
+"type": &"mutation"
+},
+"67": {
+"character": "Richard",
+"character_replacements": Array[Dictionary]([]),
+"id": "67",
+"next_id": "116",
+"notes": "",
+"parent_id": "64",
+"tags": PackedStringArray(),
+"text": "Vas pour 50 $, à très vite avec mon argent.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Vas pour 50 $, à très vite avec mon argent.",
+"type": &"dialogue"
+},
+"68": {
+"id": "68",
+"next_conditional_id": "116",
+"next_id": "69",
+"next_id_after": "116",
+"parent_id": "63",
+"type": &"condition"
+},
+"69": {
+"id": "69",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "PERSONNAGE"
+}, {
+"type": "dot"
+}, {
+"function": "set_state",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "string",
+"value": "Richard"
+}]), Array[Dictionary]([{
+"type": "string",
+"value": "ANGRY"
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "70",
+"parent_id": "68",
+"type": &"mutation"
+},
+"7": {
+"character": "Richard",
+"character_replacements": Array[Dictionary]([]),
+"id": "7",
+"next_id": "8",
+"notes": "",
+"parent_id": "3",
+"tags": PackedStringArray(),
+"text": "Cette histoire commence sérieusement à me casser les pieds ! Je te laisse 1 heure pour rembourser cette dette à tes risques et périls !!!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Cette histoire commence sérieusement à me casser les pieds ! Je te laisse 1 heure pour rembourser cette dette à tes risques et périls !!!",
+"type": &"dialogue"
+},
+"70": {
+"character": "Richard",
+"character_replacements": Array[Dictionary]([]),
+"id": "70",
+"next_id": "116",
+"notes": "",
+"parent_id": "68",
+"tags": PackedStringArray(),
+"text": "Tu veux m'arnaquer, sale idiot.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Tu veux m'arnaquer, sale idiot.",
+"type": &"dialogue"
+},
+"71": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "71",
+"next_id": "72",
+"next_id_after": "116",
+"notes": "",
+"parent_id": "61",
+"tags": PackedStringArray(),
+"text": "100 $ pour 1000 jetons",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "100 $ pour 1000 jetons",
+"type": &"response"
+},
+"72": {
+"condition": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "get_FCC",
+"type": &"function",
+"value": Array[Array]([])
+}, {
+"type": "operator",
+"value": "-"
+}, {
+"type": "number",
+"value": 1000
+}, {
+"type": "comparison",
+"value": ">="
+}, {
+"type": "number",
+"value": 0
+}, {
+"type": "colon"
+}])
+},
+"id": "72",
+"next_conditional_id": "76",
+"next_id": "73",
+"next_id_after": "116",
+"parent_id": "71",
+"type": &"condition"
+},
+"73": {
+"id": "73",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "_add_money",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "number",
+"value": 100
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "74",
+"parent_id": "72",
+"type": &"mutation"
+},
+"74": {
+"id": "74",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "_substract_FCC",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "number",
+"value": 1000
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "75",
+"parent_id": "72",
+"type": &"mutation"
+},
+"75": {
+"character": "Richard",
+"character_replacements": Array[Dictionary]([]),
+"id": "75",
+"next_id": "116",
+"notes": "",
+"parent_id": "72",
+"tags": PackedStringArray(),
+"text": "Vas pour 100 $, à très vite avec mon argent.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Vas pour 100 $, à très vite avec mon argent.",
+"type": &"dialogue"
+},
+"76": {
+"id": "76",
+"next_conditional_id": "116",
+"next_id": "77",
+"next_id_after": "116",
+"parent_id": "71",
+"type": &"condition"
+},
+"77": {
+"id": "77",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "PERSONNAGE"
+}, {
+"type": "dot"
+}, {
+"function": "set_state",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "string",
+"value": "Richard"
+}]), Array[Dictionary]([{
+"type": "string",
+"value": "ANGRY"
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "78",
+"parent_id": "76",
+"type": &"mutation"
+},
+"78": {
+"character": "Richard",
+"character_replacements": Array[Dictionary]([]),
+"id": "78",
+"next_id": "116",
+"notes": "",
+"parent_id": "76",
+"tags": PackedStringArray(),
+"text": "Tu veux m'arnaquer, sale idiot.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Tu veux m'arnaquer, sale idiot.",
+"type": &"dialogue"
+},
+"79": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "79",
+"next_id": "80",
+"next_id_after": "116",
+"notes": "",
+"parent_id": "61",
+"tags": PackedStringArray(),
+"text": "500 $ pour 5000 jetons",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "500 $ pour 5000 jetons",
+"type": &"response"
+},
+"8": {
+"character": "You",
+"character_replacements": Array[Dictionary]([]),
+"id": "8",
+"next_id": "9",
+"notes": "",
+"parent_id": "3",
+"tags": PackedStringArray(),
+"text": "Je préfère ne rien savoir, jouer et te rembourser dans le plus grand calme. Ni problème ni querelle !",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Je préfère ne rien savoir, jouer et te rembourser dans le plus grand calme. Ni problème ni querelle !",
+"type": &"dialogue"
+},
+"80": {
+"condition": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "get_FCC",
+"type": &"function",
+"value": Array[Array]([])
+}, {
+"type": "operator",
+"value": "-"
+}, {
+"type": "number",
+"value": 5000
+}, {
+"type": "comparison",
+"value": ">="
+}, {
+"type": "number",
+"value": 0
+}, {
+"type": "colon"
+}])
+},
+"id": "80",
+"next_conditional_id": "84",
+"next_id": "81",
+"next_id_after": "116",
+"parent_id": "79",
+"type": &"condition"
+},
+"81": {
+"id": "81",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "_add_money",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "number",
+"value": 500
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "82",
+"parent_id": "80",
+"type": &"mutation"
+},
+"82": {
+"id": "82",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "_substract_FCC",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "number",
+"value": 5000
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "83",
+"parent_id": "80",
+"type": &"mutation"
+},
+"83": {
+"character": "Richard",
+"character_replacements": Array[Dictionary]([]),
+"id": "83",
+"next_id": "116",
+"notes": "",
+"parent_id": "80",
+"tags": PackedStringArray(),
+"text": "Vas pour 500 $, à très vite avec mon argent.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Vas pour 500 $, à très vite avec mon argent.",
+"type": &"dialogue"
+},
+"84": {
+"id": "84",
+"next_conditional_id": "116",
+"next_id": "85",
+"next_id_after": "116",
+"parent_id": "79",
+"type": &"condition"
+},
+"85": {
+"id": "85",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "PERSONNAGE"
+}, {
+"type": "dot"
+}, {
+"function": "set_state",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "string",
+"value": "Richard"
+}]), Array[Dictionary]([{
+"type": "string",
+"value": "ANGRY"
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "86",
+"parent_id": "84",
+"type": &"mutation"
+},
+"86": {
+"character": "Richard",
+"character_replacements": Array[Dictionary]([]),
+"id": "86",
+"next_id": "116",
+"notes": "",
+"parent_id": "84",
+"tags": PackedStringArray(),
+"text": "Tu veux m'arnaquer, sale idiot.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Tu veux m'arnaquer, sale idiot.",
+"type": &"dialogue"
+},
+"87": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "87",
+"next_id": "88",
+"next_id_after": "116",
+"notes": "",
+"parent_id": "61",
+"tags": PackedStringArray(),
+"text": "1000 $ pour 10000 jetons",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "1000 $ pour 10000 jetons",
+"type": &"response"
+},
+"88": {
+"condition": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "get_FCC",
+"type": &"function",
+"value": Array[Array]([])
+}, {
+"type": "operator",
+"value": "-"
+}, {
+"type": "number",
+"value": 1000
+}, {
+"type": "comparison",
+"value": ">="
+}, {
+"type": "number",
+"value": 0
+}, {
+"type": "colon"
+}])
+},
+"id": "88",
+"next_conditional_id": "92",
+"next_id": "89",
+"next_id_after": "116",
+"parent_id": "87",
+"type": &"condition"
+},
+"89": {
+"id": "89",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "_add_money",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "number",
+"value": 1000
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "90",
+"parent_id": "88",
+"type": &"mutation"
+},
+"9": {
+"id": "9",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "PERSONNAGE"
+}, {
+"type": "dot"
+}, {
+"function": "set_state",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "string",
+"value": "Richard"
+}]), Array[Dictionary]([{
+"type": "string",
+"value": "HAPPY"
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "10",
+"parent_id": "3",
+"type": &"mutation"
+},
+"90": {
+"id": "90",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "_substract_FCC",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "number",
+"value": 10000
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "91",
+"parent_id": "88",
+"type": &"mutation"
+},
+"91": {
+"character": "Richard",
+"character_replacements": Array[Dictionary]([]),
+"id": "91",
+"next_id": "116",
+"notes": "",
+"parent_id": "88",
+"tags": PackedStringArray(),
+"text": "Vas pour 1000 $, à très vite avec mon argent.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Vas pour 1000 $, à très vite avec mon argent.",
+"type": &"dialogue"
+},
+"92": {
+"id": "92",
+"next_conditional_id": "116",
+"next_id": "93",
+"next_id_after": "116",
+"parent_id": "87",
+"type": &"condition"
+},
+"93": {
+"id": "93",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "PERSONNAGE"
+}, {
+"type": "dot"
+}, {
+"function": "set_state",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "string",
+"value": "Richard"
+}]), Array[Dictionary]([{
+"type": "string",
+"value": "ANGRY"
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "94",
+"parent_id": "92",
+"type": &"mutation"
+},
+"94": {
+"character": "Richard",
+"character_replacements": Array[Dictionary]([]),
+"id": "94",
+"next_id": "116",
+"notes": "",
+"parent_id": "92",
+"tags": PackedStringArray(),
+"text": "Tu veux m'arnaquer, sale idiot.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Tu veux m'arnaquer, sale idiot.",
+"type": &"dialogue"
+},
+"95": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "95",
+"next_id": "96",
+"next_id_after": "116",
+"notes": "",
+"parent_id": "61",
+"tags": PackedStringArray(),
+"text": "Pour tous mes jetons !",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Pour tous mes jetons !",
+"type": &"response"
+},
+"96": {
+"condition": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "get_FCC",
+"type": &"function",
+"value": Array[Array]([])
+}, {
+"type": "comparison",
+"value": ">"
+}, {
+"type": "number",
+"value": 0
+}, {
+"type": "colon"
+}])
+},
+"id": "96",
+"next_conditional_id": "100",
+"next_id": "97",
+"next_id_after": "116",
+"parent_id": "95",
+"type": &"condition"
+},
+"97": {
+"id": "97",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "_add_money",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "get_FCC",
+"type": &"function",
+"value": Array[Array]([])
+}, {
+"type": "operator",
+"value": "/"
+}, {
+"type": "number",
+"value": 10
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "98",
+"parent_id": "96",
+"type": &"mutation"
+},
+"98": {
+"id": "98",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "_substract_FCC",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "variable",
+"value": "GAME"
+}, {
+"type": "dot"
+}, {
+"function": "get_FCC",
+"type": &"function",
+"value": Array[Array]([])
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "99",
+"parent_id": "96",
+"type": &"mutation"
+},
+"99": {
+"character": "Richard",
+"character_replacements": Array[Dictionary]([]),
+"id": "99",
+"next_id": "116",
+"notes": "",
+"parent_id": "96",
+"tags": PackedStringArray(),
+"text": "TOUT ? heuuu ok...",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "TOUT ? heuuu ok...",
+"type": &"dialogue"
+}
+}
+raw_text = "~ start
+
+if not GAME.has_talk_to_richard:
+	Richard: Enfin, tu arrives ! J'espère que tu as mon fric ! Mes pauvres petits 10 000 $ !!!
+	You: Heureux de te revoir aussi, Richard ! Je suis venu ici avec 100 $ ! Je voudrais jouer dans ton casino pour rembourser ma dette.
+	do PERSONNAGE.set_state(\"Richard\", \"ANGRY\")
+	Richard: Cette histoire commence sérieusement à me casser les pieds ! Je te laisse 1 heure pour rembourser cette dette à tes risques et périls !!! 
+	You: Je préfère ne rien savoir, jouer et te rembourser dans le plus grand calme. Ni problème ni querelle !
+	do PERSONNAGE.set_state(\"Richard\", \"HAPPY\")
+	Richard: Mouais... bon, que veux-tu ?
+	do GAME.change_talk_to_richard(true)
+else:
+
+	do PERSONNAGE.set_state(\"Richard\", \"HAPPY\")
+	Richard: [[C'est bon, tu as la moula ??|Tu viens me rendre mon blé ?|AAAAAhhhhhhh, tu as enfin le pognon..]] Je savais que je pouvais compter sur toi ! 
+	You: Alors heuuuuu, je n'ai pas ton argent, mais...
+	 
+You: heuu...
+- Je pourrais avoir des jetons ?
+	Richard: Aller, tu en veux combien ?
+	- 500 jetons pour 50 $
+		if GAME.get_money() - 50 >= 0: 
+			do GAME._add_FCC(500)
+			do GAME._substract_money(50)
+			Richard: Seulement 500 ? Mais t'as pas un rond !!
+		else:
+			do PERSONNAGE.set_state(\"Richard\", \"ANGRY\")
+			Richard: Tu veux m'arnaquer, sale idiot.
+	- 1000 jetons pour 100 $
+		if GAME.get_money() - 100 >= 0: 
+			do GAME._add_FCC(1000)
+			do GAME._substract_money(100)
+			Richard: Vas pour 1000, à très vite avec mon argent.
+		else:
+			do PERSONNAGE.set_state(\"Richard\", \"ANGRY\")
+			Richard: Tu veux m'arnaquer, sale idiot.
+	- 5000 jetons pour 500 $
+		if GAME.get_money() - 500 >= 0: 
+			do GAME._add_FCC(5000)
+			do GAME._substract_money(500)
+			Richard: Vas pour 5000, à très vite avec mon argent.
+		else:
+			do PERSONNAGE.set_state(\"Richard\", \"ANGRY\")
+			Richard: Tu veux m'arnaquer, sale idiot.
+	- 10000 jetons pour 1000 $
+		if GAME.get_money() - 1000 >= 0: 
+			do GAME._add_FCC(10000)
+			do GAME._substract_money(1000)
+			Richard: Vas pour 10000, à très vite avec mon argent.
+		else:
+			do PERSONNAGE.set_state(\"Richard\", \"ANGRY\")
+			Richard: Tu veux m'arnaquer, sale idiot.
+	- Pour tout mon argent !
+		if GAME.get_money() > 0:
+			do GAME._add_FCC(GAME.get_money() * 10)
+			do GAME._substract_money(GAME.get_money())
+			Richard: Ok, let's gooo. Tu a intérêt à gagner.
+		else:
+			do PERSONNAGE.set_state(\"Richard\", \"ANGRY\")
+			Richard: Tu n'as plus un sou, sale fou !
+- Je pourrais échanger mes jetons ? 
+	Richard: Tu veux te refaire de la thune !! C'est pour me rembourser, j'espère... Tu veux échanger combien de jetons ??
+	- 50 $ pour 500 jetons
+		if GAME.get_FCC() - 500 >= 0:
+			do GAME._add_money(50)
+			do GAME._substract_FCC(500)
+			Richard: Vas pour 50 $, à très vite avec mon argent.
+		else:
+			do PERSONNAGE.set_state(\"Richard\", \"ANGRY\")
+			Richard: Tu veux m'arnaquer, sale idiot.
+	- 100 $ pour 1000 jetons
+		if GAME.get_FCC() - 1000 >= 0:
+			do GAME._add_money(100)
+			do GAME._substract_FCC(1000)
+			Richard: Vas pour 100 $, à très vite avec mon argent.
+		else:
+			do PERSONNAGE.set_state(\"Richard\", \"ANGRY\")
+			Richard: Tu veux m'arnaquer, sale idiot.
+	- 500 $ pour 5000 jetons
+		if GAME.get_FCC() - 5000 >= 0:
+			do GAME._add_money(500)
+			do GAME._substract_FCC(5000)
+			Richard: Vas pour 500 $, à très vite avec mon argent.
+		else:
+			do PERSONNAGE.set_state(\"Richard\", \"ANGRY\")
+			Richard: Tu veux m'arnaquer, sale idiot.
+	- 1000 $ pour 10000 jetons
+		if GAME.get_FCC() - 1000 >= 0:
+			do GAME._add_money(1000)
+			do GAME._substract_FCC(10000)
+			Richard: Vas pour 1000 $, à très vite avec mon argent.
+		else:
+			do PERSONNAGE.set_state(\"Richard\", \"ANGRY\")
+			Richard: Tu veux m'arnaquer, sale idiot.
+	- Pour tous mes jetons !
+		if GAME.get_FCC() > 0:
+			do GAME._add_money(GAME.get_FCC() / 10)
+			do GAME._substract_FCC(GAME.get_FCC())
+			Richard: TOUT ? heuuu ok...
+		else:
+			do PERSONNAGE.set_state(\"Richard\", \"ANGRY\")
+			Richard: Tu n'as plus de jetons, sale fou !
+- J'en ai plus rien à BRANLER !! Je m'en fous de ma dette.
+	do PERSONNAGE.set_state(\"Richard\", \"ANGRY\")
+	Richard: ALOOOORS, JAMAIS ON NE M'AVAIT PARLÉ COMME ÇA. TU VAS PASSER UN SALE QUART D'HEURE !!!!!
+	do GAME.emit_signal(\"kill\")
+- Je voudrais rembourser ma dette !
+	if GAME.get_money() >= 10000: 
+		Richard: ENFIN !!! Pas trop tôt !!! Je commençais à m'impatienter, moi ! Mais bon, tu me les as remboursés !
+		You: C'est avec plaisir !!! Maintenant je peux rentrer et jouer à Valo et rank-up Iron II.
+		Richard: Sale noob !
+		do GAME.emit_signal(\"win\")
+	else:
+		do PERSONNAGE.set_state(\"Richard\", \"ANGRY\")
+		Richard: Espèce de con tu n'as pas la thune ! Vas travailler sale chômeur !!!
+=> END
+
+~ phone
+
+Richard: Salut. Comment ça va ??
+You: Salut mon vieil ami. J'ai une urgence !!! Question de vie ou de mort !!! Il faut que tu me prêtes une petite somme d'argent.
+Richard: Encore ?!! Tu veux combien ??? Et j'espère que tu me les rembourseras, pas comme la dernière fois.
+You: Tu peux me faire confiance. Pour le montant, je te laisse t'en charger...
+Richard: OK, pas de soucis.
+Notification: Vous venez de recevoir un virement de la part de Richard. 
+
+=> END
+
+~ PlusDeTemps
+
+Richard: JE T'AVAIS LAISSÉ 1H !!! Maintenant, c'est trop tard !!!
+do PERSONNAGE.set_state(\"Richard\", \"ANGRY\")
+do GAME.emit_signal(\"kill\")
+
+=> END"
+metadata/dialogue_manager_version = "2.39.1"

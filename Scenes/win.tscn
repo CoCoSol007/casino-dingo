@@ -17,12 +17,10 @@ gradient = SubResource("Gradient_kt5ry")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fpb8t"]
 lifetime_randomness = 1.0
+particle_flag_disable_z = true
 emission_shape = 3
 emission_box_extents = Vector3(576, 1, 1)
-particle_flag_disable_z = true
 gravity = Vector3(0, 200, 0)
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
 scale_min = 0.0
 scale_max = 0.01
 color_ramp = SubResource("GradientTexture1D_c8w38")
@@ -140,11 +138,11 @@ text = "Jeu fait par Fish Canard"
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 649.0
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(576, 324)
-scale = Vector2(0.218928, 0.369441)
+scale = Vector2(0.45, 0.758)
 texture = ExtResource("2_pgac2")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
@@ -156,7 +154,7 @@ lifetime = 5.0
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(582, 437)
-scale = Vector2(0.141327, 0.141327)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("7_apoa8")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

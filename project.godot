@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Casino"
+config/name="CasinoDingo"
 config/description="A Game Made By Fish Canard"
 run/main_scene="res://Scenes/MainMenu.tscn"
-config/features=PackedStringArray("4.0", "Mobile")
+config/features=PackedStringArray("4.2", "Mobile")
 boot_splash/bg_color=Color(0.247059, 0.0666667, 0.121569, 1)
 boot_splash/image="res://assets/Money.png"
 config/icon="res://assets/Money.png"
@@ -21,9 +21,9 @@ config/icon="res://assets/Money.png"
 [autoload]
 
 GAME="*res://autoload/Game.gd"
+PERSONNAGE="*res://autoload/Personnage.gd"
 Transit="*res://addons/transit/Transit.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-PERSONNAGE="*res://autoload/Personnage.gd"
 QUETE="*res://autoload/Quete.gd"
 
 [dialogue_manager]
@@ -32,14 +32,14 @@ general/states=["QUETE", "GAME", "PERSONNAGE"]
 
 [display]
 
-window/size/mode=4
+window/size/mode=3
 window/stretch/mode="canvas_items"
-window/stretch/aspect="ignore"
+window/stretch/aspect="keep_width"
 mouse_cursor/custom_image="res://assets/curseur.png"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/transit/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/transit/plugin.cfg")
 
 [internationalization]
 
@@ -48,3 +48,4 @@ locale/translations_pot_files=PackedStringArray("res://dialogue/richard.dialogue
 [rendering]
 
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
