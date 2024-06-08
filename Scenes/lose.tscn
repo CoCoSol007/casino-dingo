@@ -68,7 +68,7 @@ script = ExtResource("1_vgcw5")
 
 [node name="fond" type="Sprite2D" parent="."]
 position = Vector2(576, 324)
-scale = Vector2(0.218928, 0.369441)
+scale = Vector2(0.442417, 0.750285)
 texture = ExtResource("1_uyce1")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
