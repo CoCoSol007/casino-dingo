@@ -13,7 +13,7 @@ config_version=5
 config/name="CasinoDingo"
 config/description="A Game Made By Fish Canard"
 run/main_scene="res://Scenes/MainMenu.tscn"
-config/features=PackedStringArray("4.1", "Mobile")
+config/features=PackedStringArray("4.2", "Mobile")
 boot_splash/bg_color=Color(0.247059, 0.0666667, 0.121569, 1)
 boot_splash/image="res://assets/Money.png"
 config/icon="res://assets/Money.png"
@@ -21,9 +21,9 @@ config/icon="res://assets/Money.png"
 [autoload]
 
 GAME="*res://autoload/Game.gd"
+PERSONNAGE="*res://autoload/Personnage.gd"
 Transit="*res://addons/transit/Transit.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-PERSONNAGE="*res://autoload/Personnage.gd"
 QUETE="*res://autoload/Quete.gd"
 
 [dialogue_manager]

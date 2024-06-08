@@ -10,15 +10,13 @@ colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
 gradient = SubResource("Gradient_3i1cm")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jsv3b"]
+particle_flag_disable_z = true
 emission_shape = 3
 emission_box_extents = Vector3(100, 1, 1)
-particle_flag_disable_z = true
 spread = 180.0
-gravity = Vector3(0, 10, 0)
 initial_velocity_min = 150.0
 initial_velocity_max = 200.0
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
+gravity = Vector3(0, 10, 0)
 scale_min = 2.0
 scale_max = 5.0
 color_ramp = SubResource("GradientTexture1D_pnypb")
@@ -31,15 +29,13 @@ colors = PackedColorArray(1, 0, 0, 1, 0, 0, 0, 0)
 gradient = SubResource("Gradient_n2njc")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fhb6u"]
+particle_flag_disable_z = true
 emission_shape = 3
 emission_box_extents = Vector3(100, 1, 1)
-particle_flag_disable_z = true
 spread = 180.0
-gravity = Vector3(0, 10, 0)
 initial_velocity_min = 150.0
 initial_velocity_max = 200.0
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
+gravity = Vector3(0, 10, 0)
 scale_min = 2.0
 scale_max = 5.0
 color_ramp = SubResource("GradientTexture1D_ydxvd")

@@ -217,7 +217,7 @@ script = ExtResource("1_12bxb")
 
 [node name="FontShop" type="Sprite2D" parent="."]
 position = Vector2(-409, 324.141)
-scale = Vector2(0.466, 0.369601)
+scale = Vector2(1.011, 0.803)
 texture = ExtResource("2_w6fjp")
 
 [node name="Richard" type="AnimatedSprite2D" parent="."]
@@ -231,7 +231,7 @@ script = ExtResource("4_ehb0w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-823, 208)
-scale = Vector2(0.116155, 0.116155)
+scale = Vector2(0.232, 0.232)
 sprite_frames = SubResource("SpriteFrames_0cb64")
 animation = &"NORMAL"
 
@@ -335,9 +335,9 @@ texture = ExtResource("8_nntts")
 layout_mode = 0
 offset_left = 275.0
 offset_top = 445.0
-offset_right = 1299.0
-offset_bottom = 1469.0
-scale = Vector2(0.1, 0.1)
+offset_right = 787.0
+offset_bottom = 957.0
+scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("6_710c1")
 texture_pressed = ExtResource("11_vwfwn")
 texture_hover = ExtResource("12_chqju")
@@ -346,9 +346,9 @@ texture_hover = ExtResource("12_chqju")
 layout_mode = 0
 offset_left = 737.0
 offset_top = 439.0
-offset_right = 1761.0
-offset_bottom = 1463.0
-scale = Vector2(0.1, 0.1)
+offset_right = 1249.0
+offset_bottom = 951.0
+scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("6_710c1")
 texture_pressed = ExtResource("11_vwfwn")
 texture_hover = ExtResource("12_chqju")
@@ -358,9 +358,9 @@ flip_h = true
 layout_mode = 0
 offset_left = 890.0
 offset_top = 189.0
-offset_right = 3370.0
-offset_bottom = 1943.0
-scale = Vector2(0.100233, 0.100233)
+offset_right = 1717.0
+offset_bottom = 774.0
+scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("13_3rk65")
 texture_pressed = ExtResource("14_q5im5")
 texture_hover = ExtResource("15_3qelm")
@@ -369,9 +369,9 @@ texture_hover = ExtResource("15_3qelm")
 layout_mode = 0
 offset_left = -2.0
 offset_top = 582.0
-offset_right = 5020.0
-offset_bottom = 1720.0
-scale = Vector2(0.047765, 0.047765)
+offset_right = 1002.0
+offset_bottom = 810.0
+scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("24_irohy")
 texture_pressed = ExtResource("25_pohh5")
 texture_hover = ExtResource("26_wm6ob")
