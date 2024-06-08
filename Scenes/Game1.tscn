@@ -146,14 +146,14 @@ scale = Vector2(829.25, 286.5)
 mesh = SubResource("QuadMesh_yeqsy")
 
 [node name="Colun" parent="." instance=ExtResource("3_4w6go")]
-position = Vector2(270, 100)
+position = Vector2(270, 115.273)
 
 [node name="Colun2" parent="." instance=ExtResource("3_4w6go")]
-position = Vector2(545, 100)
+position = Vector2(545, 115.273)
 end_index = 11
 
 [node name="Colun3" parent="." instance=ExtResource("3_4w6go")]
-position = Vector2(848, 100)
+position = Vector2(848, 115.273)
 end_index = 12
 
 [node name="Casino" type="Sprite2D" parent="."]
@@ -162,6 +162,7 @@ scale = Vector2(0.45, 0.45)
 texture = ExtResource("2_tpdx1")
 
 [node name="Separator" type="Sprite2D" parent="Casino"]
+position = Vector2(0, 25.8588)
 scale = Vector2(2, 2)
 texture = ExtResource("5_33ep3")
 
@@ -179,7 +180,7 @@ texture = ExtResource("4_xrlq2")
 offset = Vector2(-250, 0)
 
 [node name="particule_casino" parent="." instance=ExtResource("29_21tvv")]
-position = Vector2(368, 4)
+position = Vector2(480, 0)
 
 [node name="HUD" type="CanvasLayer" parent="."]
 metadata/_edit_use_anchors_ = true
@@ -295,8 +296,8 @@ texture = ExtResource("20_4hhua")
 layout_mode = 0
 offset_left = -1.0
 offset_top = 592.0
-offset_right = 5021.0
-offset_bottom = 1730.0
+offset_right = 1003.0
+offset_bottom = 820.0
 scale = Vector2(0.168, 0.168)
 texture_normal = ExtResource("21_kvtif")
 texture_pressed = ExtResource("22_go0vd")
