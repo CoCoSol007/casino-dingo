@@ -2,7 +2,7 @@
 
 ## The game
 If you would like to try the game
-- [on the web](yannis300307.fr/casino-dingo/)
+- [on the web](https://yannis300307.fr/casino-dingo/)
 - [for Android](https://yannis300307.fr/casino-dingo/download/android/casino-dingo.apk)
 - [for Windows](https://yannis300307.fr/casino-dingo/download/windows/casino-dingo.exe)
 - [for iOS (beta)](https://yannis300307.fr/casino-dingo/download/ios/casino-dingo.pck )
