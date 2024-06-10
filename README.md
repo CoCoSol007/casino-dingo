@@ -1,5 +1,13 @@
 # Casino Dingo
 
+## The game
+If you would like to try the game
+- [on the web](yannis300307.fr/casino-dingo/)
+- [for Android](https://yannis300307.fr/casino-dingo/download/android/casino-dingo.apk)
+- [for Windows](https://yannis300307.fr/casino-dingo/download/windows/casino-dingo.exe)
+- [for iOS (beta)](https://yannis300307.fr/casino-dingo/download/ios/casino-dingo.pck )
+
+
 ## Overview
 
 **Casino Dingo** is a 2D game developed using the Godot engine. Please note that the game's text and dialogues are in French. In this game, you play as a protagonist who, after spending all their money on video games and getting fired by their boss, decides to try their luck at **Casino Dingo** in an attempt to make some quick cash.
