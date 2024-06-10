@@ -18,3 +18,4 @@ res://Scenes/Game3.tscn
 res://Scenes/lose.tscn
 res://Scenes/particule_casino.tscn
 res://Scenes/win.tscn
+res://autoload/Game.gd
