@@ -95,9 +95,12 @@ func get_time_left():
 func new_save():
 	gameOver = false
 	QUETE._annuller_quete()
+	QUETE.get_price = 0
+
 	set_FCC(0)
 	set_money(100)
 	has_talk_to_richard = false
+	talk_to_bilyBoy = false
 	first_co = true
 	real_first_co = true
 	var data = {
