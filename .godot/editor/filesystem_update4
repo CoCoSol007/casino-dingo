@@ -1,9 +1,8 @@
-res://Scenes/Game3.tscn
+res://assets/quete/popup.tscn
 res://Scenes/MainMenu.tscn
 res://Scenes/shop.tscn
 res://addons/transit/Transit.tscn
 res://assets/Personnages/personnage.tscn
-res://assets/quete/popup.tscn
 res://assets/quete/quete.tscn
 res://assets/cinematique/cinematique_start.tscn
 res://addons/dialogue_manager/components/code_edit.tscn
@@ -15,6 +14,7 @@ res://Scenes/ScripteGame/colun.tscn
 res://Scenes/ScripteGame/Playcart.tscn
 res://Scenes/SwitchSceneButton/button.tscn
 res://Scenes/Game1.tscn
+res://Scenes/Game3.tscn
 res://Scenes/lose.tscn
 res://Scenes/particule_casino.tscn
 res://Scenes/win.tscn
