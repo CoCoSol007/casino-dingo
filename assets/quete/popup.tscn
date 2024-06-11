@@ -256,7 +256,6 @@ volume_db = -5.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(60.5637, 68.5326)
-scale = Vector2(0.297693, 0.297693)
 sprite_frames = SubResource("SpriteFrames_itm6i")
 animation = &"end"
 frame = 30
