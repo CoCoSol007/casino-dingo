@@ -1,3 +1,5 @@
+res://Scenes/Game1.tscn
+res://Scenes/ScripteGame/Game1.gd
 res://Scenes/MainMenu.tscn
 res://Scenes/shop.tscn
 res://addons/transit/Transit.tscn
@@ -13,9 +15,8 @@ res://HUD/hud.tscn
 res://Scenes/ScripteGame/colun.tscn
 res://Scenes/ScripteGame/Playcart.tscn
 res://Scenes/SwitchSceneButton/button.tscn
-res://Scenes/Game1.tscn
 res://Scenes/Game3.tscn
 res://Scenes/lose.tscn
 res://Scenes/particule_casino.tscn
 res://Scenes/win.tscn
-res://autoload/Game.gd
+res://Scenes/ScripteGame/game3.gd

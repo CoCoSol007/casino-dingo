@@ -50,14 +50,15 @@ func _end_game():
 	for n in $HUD/HUD/npc_hand.get_children():
 		$HUD/HUD/npc_hand.remove_child(n)
 		n.queue_free()
+	$HUD/HUD/HomeButton.disabled = false
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _check_score(value):
 	if value > 21 :
 		o = true
-		PERSONNAGE.emit_signal("change_state","Jack", "HAPPY")		
-		QUETE.emit_signal("new_defait", QUETE.GameMachine.BlackJack)		
-		$HUD/HUD/lost.set_visible(true)		
+		PERSONNAGE.emit_signal("change_state","Jack", "HAPPY")
+		QUETE.emit_signal("new_defait", QUETE.GameMachine.BlackJack)
+		$HUD/HUD/lost.set_visible(true)
 		$Timer.start(2)
 		await $Timer.timeout
 		if GAME.get_money() <= 0 and GAME.get_FCC() <= 0:
@@ -81,6 +82,7 @@ func npc_gen_new_cart():
 
 
 func _on_startbutton_button_down():
+	$HUD/HUD/HomeButton.disabled = true
 	Button_Sound.play()
 	if o == false:
 		if !is_playing:

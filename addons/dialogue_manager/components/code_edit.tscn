@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://addons/dialogue_manager/components/code_edit_syntax_highlighter.gd" id="1_58cfo"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/components/code_edit.gd" id="1_g324i"]
 
-[sub_resource type="SyntaxHighlighter" id="SyntaxHighlighter_2xvnd"]
+[sub_resource type="SyntaxHighlighter" id="SyntaxHighlighter_4qrh5"]
 script = ExtResource("1_58cfo")
 
 [node name="CodeEdit" type="CodeEdit"]
@@ -25,7 +25,7 @@ set has_something = true
 => END"
 scroll_past_end_of_file = true
 minimap_draw = true
-syntax_highlighter = SubResource("SyntaxHighlighter_2xvnd")
+syntax_highlighter = SubResource("SyntaxHighlighter_4qrh5")
 highlight_all_occurrences = true
 highlight_current_line = true
 draw_tabs = true
