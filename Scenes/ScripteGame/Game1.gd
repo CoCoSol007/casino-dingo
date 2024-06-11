@@ -30,6 +30,7 @@ func _process(_delta):
 
 func _on_touch_screen_button_button_down():
 	Button_Sound.play()
+	$HUD/HUD/Button.disabled = true
 	if !GAME.gameOver:
 		if can_run :
 			if GAME.get_FCC() - bet  >= 0:	
@@ -66,6 +67,7 @@ func do_tic_sound():
 	tic_sound.play()
 
 func _get_result():
+	$HUD/HUD/Button.disabled = false
 	
 	var res1 = $Colun.win_image
 	var res2 = $Colun2.win_image
@@ -111,7 +113,6 @@ func _pay_player(win, num):
 	
 	GAME.emit_signal("add_FCC", bet * coef)
 	QUETE.emit_signal("new_victoir", QUETE.GameMachine.SloteMachine)
-	
 
 func _kill():
 	killing = true 
