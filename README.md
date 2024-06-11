@@ -28,7 +28,7 @@ Everything is done with the mouse.
 
 ## Credits
 
-- Game Development: [CoCoSol](https://github.com/CoCoSol007)
+- Game Development: [CoCoSol](https://github.com/CoCoSol007) (Main dev), [Yannis300307](https://github.com/yannis300307) (Little enhancements)
 - Graphics: [Bijunoka](https://github.com/Bijunoka)
 - Music and Sound Effects: [Bijunoka](https://github.com/Bijunoka)
 
