@@ -100,7 +100,7 @@ You: heuu...
 		else:
 			do PERSONNAGE.set_state("Richard", "ANGRY")
 			Richard: Tu n'as plus de jetons, sale fou !
-- J'en ai plus rien à BRANLER !! Je m'en fous de ma dette.
+- Je m'en fous de ma dette!!!
 	do PERSONNAGE.set_state("Richard", "ANGRY")
 	Richard: ALOOOORS, JAMAIS ON NE M'AVAIT PARLÉ COMME ÇA. TU VAS PASSER UN SALE QUART D'HEURE !!!!!
 	do GAME.emit_signal("kill")
@@ -112,7 +112,7 @@ You: heuu...
 		do GAME.emit_signal("win")
 	else:
 		do PERSONNAGE.set_state("Richard", "ANGRY")
-		Richard: Espèce de con tu n'as pas la thune ! Vas travailler sale chômeur !!!
+		Richard: Espèce de *** tu n'as pas la thune ! Vas travailler sale chômeur !!!
 => END
 
 ~ phone
